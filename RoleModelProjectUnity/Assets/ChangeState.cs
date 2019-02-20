@@ -11,10 +11,6 @@ public class ChangeState : MonoBehaviour
     public int minSize = 1;
     public int maxSize = 6;
 
-    private float startAlpha = 1;
-    private float minAlpha = 0;
-    private float maxAlpha = 1f;
-    private float currAlpha;
 
     public float speed = 3.0f;
 
@@ -23,9 +19,13 @@ public class ChangeState : MonoBehaviour
     private int currScale;
 
     public SpriteRenderer rend;
-   
+    public GameObject obj;
 
-    private int index;
+    public InputVal inputval;
+
+    private float currAlpha;
+
+   
 
 
     // Start is called before the first frame update
@@ -36,7 +36,7 @@ public class ChangeState : MonoBehaviour
         currScale = startSize;
         targetScale = baseScale * startSize;
 
-        currAlpha = startAlpha;
+
        
         rend.color = new Color(1f, 1f, 1f, currAlpha);
     }
@@ -47,21 +47,11 @@ public class ChangeState : MonoBehaviour
         transform.localScale = Vector3.MoveTowards(transform.localScale, 
             targetScale, speed * Time.deltaTime);
         
-        if(Input.GetKeyDown("up"))
+        
+        rend.color = new Color(1f, 1f, 1f, inputval.bsiValue);
+        if(rend.color == new Color(1f,1f,1f, 0))
         {
-            //obj.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime;
-            //ChangeSize(true);
-            ChangeAlpha(true);
-            currAlpha += .5f;
-            
-            //  Debug.Log("working");
-        }
-        if(Input.GetKeyDown("down"))
-        {
-            //obj.transform.localScale -= new Vector3(1, 1, 1) * Time.deltaTime;
-            //ChangeSize(false);
-            ChangeAlpha(false);
-            currAlpha -= .5f;
+            obj.SetActive(false);
         }
     }
 
@@ -78,17 +68,6 @@ public class ChangeState : MonoBehaviour
         currScale = Mathf.Clamp(currScale, minSize, maxSize + 1);
         targetScale = baseScale * currScale;
     }
-    public void ChangeAlpha(bool trans)
-    {
-        if(trans)
-        {
-            currAlpha++;
-        }
-        else
-        {
-            currAlpha--;
-        }
-        currAlpha = Mathf.Clamp(currAlpha, minAlpha, maxAlpha + 1);
-    }
+ 
 
 }
