@@ -19,13 +19,10 @@ public class ChangeState : MonoBehaviour
     private int currScale;
 
     public SpriteRenderer rend;
-    public GameObject obj;
 
     public InputVal inputval;
 
-    private float currAlpha;
-
-   
+    public float currAlpha = 0;
 
 
     // Start is called before the first frame update
@@ -37,8 +34,8 @@ public class ChangeState : MonoBehaviour
         targetScale = baseScale * startSize;
 
 
-       
-        rend.color = new Color(1f, 1f, 1f, currAlpha);
+        //rend.color = new Color(1f, 1f, 1f, inputval.bsiValue);
+
     }
 
     // Update is called once per frame
@@ -46,13 +43,10 @@ public class ChangeState : MonoBehaviour
     {
         transform.localScale = Vector3.MoveTowards(transform.localScale, 
             targetScale, speed * Time.deltaTime);
-        
-        
+
         rend.color = new Color(1f, 1f, 1f, inputval.bsiValue);
-        if(rend.color == new Color(1f,1f,1f, 0))
-        {
-            obj.SetActive(false);
-        }
+        Debug.Log(inputval.bsiValue);
+
     }
 
     public void ChangeSize(bool bigger)
