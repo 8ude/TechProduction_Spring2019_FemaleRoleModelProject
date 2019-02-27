@@ -41,8 +41,11 @@ public class InputVal : MonoBehaviour
         //in some ways, it works well - the bsiValue lets us directly set the opacity on different sprites
         //then we reset after we get to the next sprite value
 
-        //but, this resetting assumes that we are only going up, and makes it so that we can't do any 
+        //but... this resetting assumes that we are only going up, and makes it so that we can't do any 
         //crossfading
+        
+        //instead, I'm just passing a float (which I've called imageValue) directly to the
+        //ChangeState.cs script different sprites
 
         /*
         if(Input.GetKeyDown("up"))
