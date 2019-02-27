@@ -5,7 +5,15 @@ using UnityEngine;
 public class InputVal : MonoBehaviour
 {
 
-    public float bsiValue = 0;
+    //this is the value that we're sending to our image
+    //with a range from 0-100
+    public float imageValue = 0;
+    
+    //we're adding another min-to-max scale here so that we can get our data in a usable range
+    public float minBCIValue, maxBCIValue;
+
+    public float inputBCIValue;
+    
     public SpriteRenderer[] emotes;
     private int counter = 0;
    // private int minCount = 0;
@@ -13,16 +21,30 @@ public class InputVal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //in the revised version, we do everything with the alpha, and keep the sprites active
         for (int i = 0; i < emotes.Length; i++)
         {
-            emotes[i].enabled = false;
+            //emotes[i].enabled = false;
         }
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+
+        imageValue = MathUtil.Remap(inputBCIValue, minBCIValue, maxBCIValue, 0f, 100f);
+
+        //There's an issue here with the counter - we can go up but we can't go back down
+        //part of the problem is the way that we're dealing with these two variables, the bsiValue and
+        //the counter
+
+        //in some ways, it works well - the bsiValue lets us directly set the opacity on different sprites
+        //then we reset after we get to the next sprite value
+
+        //but, this resetting assumes that we are only going up, and makes it so that we can't do any 
+        //crossfading
+
+        /*
         if(Input.GetKeyDown("up"))
         {
             counter++;
@@ -88,10 +110,11 @@ public class InputVal : MonoBehaviour
         //{
         //    bsiValue -= .1f;
         //}
-        
+        */
+
     }
     private void Reset()
     {
-            bsiValue = 0;
+            imageValue = 0;
     }
 }
