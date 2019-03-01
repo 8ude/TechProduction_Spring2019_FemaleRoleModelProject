@@ -24,6 +24,7 @@ public class DialoguePickerScript : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _audioSource.playOnAwake = false;
         ResetPlayedList();
+        inputValue = 0;
     }
 
     // Update is called once per frame
