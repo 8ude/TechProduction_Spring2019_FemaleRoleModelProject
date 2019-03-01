@@ -49,18 +49,19 @@ public class ChangeState : MonoBehaviour
         inputBCIValue = inputval.imageValue;
         
         BSIChangeOpacity();
-        /*
+        
+        
         transform.localScale = Vector3.MoveTowards(transform.localScale, 
             targetScale, speed * Time.deltaTime);
 
-        rend.color = new Color(1f, 1f, 1f, inputval.bsiValue);
+        //rend.color = new Color(1f, 1f, 1f, inputval.bsiValue);
         
         //Note - in order to debug effectively, you should 
         //have some more explicit text in the debug log.
         //for example: 
         //Debug.Log(gameObject.name.ToString + " bsiValue is " + inputval.bsiValue)
         //Debug.Log(inputval.bsiValue);
-        */
+        
 
     }
 
