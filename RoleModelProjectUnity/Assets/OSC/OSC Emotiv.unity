@@ -326,8 +326,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d29c336135db4746b2e5233d730ad75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VOList: []
-  inputValue: 0
+  VOList:
+  - percentage: 4
+    clipToPlay: {fileID: 8300000, guid: c05f78e2f17b0406e8e81c7c7b4957c0, type: 3}
+    hasPlayed: 0
+  - percentage: 8
+    clipToPlay: {fileID: 8300000, guid: 56066a90783434c00a4eebe02ec13304, type: 3}
+    hasPlayed: 0
+  - percentage: 12
+    clipToPlay: {fileID: 8300000, guid: f353e1d00d99b4817a111af35154a273, type: 3}
+    hasPlayed: 0
+  - percentage: 16
+    clipToPlay: {fileID: 8300000, guid: f5959a99add1e436f8358e57f37d47b2, type: 3}
+    hasPlayed: 0
+  - percentage: 20
+    clipToPlay: {fileID: 8300000, guid: e2066172b09844a6cae538c9e9309d2a, type: 3}
+    hasPlayed: 0
+  - percentage: 25
+    clipToPlay: {fileID: 8300000, guid: 1a1e76bee3b134d808b3cc336c9ba6e0, type: 3}
+    hasPlayed: 0
+  - percentage: 30
+    clipToPlay: {fileID: 8300000, guid: 7fe426dce696b4237abb91d6913ced7c, type: 3}
+    hasPlayed: 0
+  - percentage: 35
+    clipToPlay: {fileID: 8300000, guid: 74f6e4a08ab4c4b7499099e9a89b260a, type: 3}
+    hasPlayed: 0
+  - percentage: 40
+    clipToPlay: {fileID: 8300000, guid: 7e3f24c029fef47b8bddb8065c9d226f, type: 3}
+    hasPlayed: 0
+  - percentage: 46.7
+    clipToPlay: {fileID: 8300000, guid: 77894fcebbc73452bb990f7e8838648b, type: 3}
+    hasPlayed: 0
+  - percentage: 53.4
+    clipToPlay: {fileID: 8300000, guid: 942cb76ae8af94eb38207c399dbe9abc, type: 3}
+    hasPlayed: 0
+  - percentage: 61.1
+    clipToPlay: {fileID: 8300000, guid: d0cc640167bda4cacb13b272833585b3, type: 3}
+    hasPlayed: 0
+  - percentage: 66.1
+    clipToPlay: {fileID: 8300000, guid: 5b8fd7f283f5c4937accb766b490f030, type: 3}
+    hasPlayed: 0
+  - percentage: 71.1
+    clipToPlay: {fileID: 8300000, guid: 3d8bf7e43e37d437792235e97dfbfd8f, type: 3}
+    hasPlayed: 0
+  - percentage: 76.1
+    clipToPlay: {fileID: 8300000, guid: 70c73e18dadca4b6f8b7a7e67d62210e, type: 3}
+    hasPlayed: 0
+  - percentage: 81.1
+    clipToPlay: {fileID: 8300000, guid: 83479ec85ccde45d5a4108fbb700e737, type: 3}
+    hasPlayed: 0
+  - percentage: 84.4
+    clipToPlay: {fileID: 8300000, guid: fa0ecb6b470274b2b8d71bc2ee0a91d8, type: 3}
+    hasPlayed: 0
+  - percentage: 87.7
+    clipToPlay: {fileID: 8300000, guid: f930db98e4c454f7595a69f7f618cc25, type: 3}
+    hasPlayed: 0
+  - percentage: 91
+    clipToPlay: {fileID: 8300000, guid: 6ad1a6cfd5f1a42c3affa5e4db386c9f, type: 3}
+    hasPlayed: 0
+  - percentage: 94.3
+    clipToPlay: {fileID: 8300000, guid: 2cc27b434273b478a9be6bc280015ad1, type: 3}
+    hasPlayed: 0
+  - percentage: 97.6
+    clipToPlay: {fileID: 8300000, guid: 68b03e91503f8447fa6dc7ba640884c4, type: 3}
+    hasPlayed: 0
+  - percentage: 100
+    clipToPlay: {fileID: 8300000, guid: e520d489c6b0e4c019d2eccb731e4e1a, type: 3}
+    hasPlayed: 0
+  inputValue: 50
 --- !u!4 &1164500675
 Transform:
   m_ObjectHideFlags: 0
