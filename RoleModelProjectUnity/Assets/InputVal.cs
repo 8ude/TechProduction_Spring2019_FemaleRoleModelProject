@@ -15,6 +15,8 @@ public class InputVal : MonoBehaviour
     public float inputBCIValue;
 
     public float bsiValue;
+
+    public DialoguePickerScript dialoguepicker;
     
     public SpriteRenderer[] emotes;
     private int counter = 0;
@@ -35,6 +37,7 @@ public class InputVal : MonoBehaviour
     void Update() {
 
         imageValue = MathUtil.Remap(inputBCIValue, minBCIValue, maxBCIValue, 0f, 100f);
+        dialoguepicker.inputValue = imageValue;
 
         //There's an issue here with the counter - we can go up but we can't go back down
         //part of the problem is the way that we're dealing with these two variables, the bsiValue and
@@ -121,7 +124,7 @@ public class InputVal : MonoBehaviour
             }
             if (counter == 10)
             {
-                Reset();
+                Reset1();
             }
             if(counter < 20 && counter > 10 && emotes[1])
             {
@@ -131,7 +134,7 @@ public class InputVal : MonoBehaviour
             }
             if(counter == 20)
             {
-                Reset();
+                Reset1();
             }
             if(counter < 30 && counter > 20 && emotes[2])
             {
@@ -142,7 +145,7 @@ public class InputVal : MonoBehaviour
             }
             if (counter == 30)
             {
-                Reset();
+                Reset1();
             }
             if(counter < 40 && counter > 30 && emotes[3])
             {
@@ -154,7 +157,7 @@ public class InputVal : MonoBehaviour
             }
             if (counter == 40)
             {
-                Reset();
+                Reset1();
             }
             if(counter < 50 && counter > 40 && emotes[4])
             {
@@ -167,7 +170,7 @@ public class InputVal : MonoBehaviour
             }
             if(counter == 50)
             {
-                Reset();
+                Reset1();
             }
             
         }
@@ -178,5 +181,9 @@ public class InputVal : MonoBehaviour
     private void Reset()
     {
             bsiValue = 0;
+    }
+    private void Reset1()
+    {
+        bsiValue = 1;
     }
 }
