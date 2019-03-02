@@ -49,7 +49,7 @@ public class InputVal : MonoBehaviour
         //instead, I'm just passing a float (which I've called imageValue) directly to the
         //ChangeState.cs script different sprites
 
-        
+        /*
         if(Input.GetKeyDown("up"))
         {
             counter++;
@@ -171,6 +171,7 @@ public class InputVal : MonoBehaviour
             }
             
         }
+        */
         
 
     }
