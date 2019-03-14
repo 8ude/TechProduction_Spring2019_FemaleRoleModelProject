@@ -11,7 +11,9 @@ public class DecisionScript : MonoBehaviour
     public GameObject continuebox;
     public Text dialougetext;
     public Text button1text, button2text;
+    [TextArea(3, 10)]
     public string[] dialouge;
+    [TextArea(3, 10)]
     public string[] scenedialouge;
     public string[] buttons;
     // Start is called before the first frame update
