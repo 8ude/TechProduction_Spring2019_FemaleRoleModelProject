@@ -15,6 +15,8 @@ public class DecisionScript : MonoBehaviour
     public GameObject score;
     public GameObject dialougebox;
 
+    public Animator anim;
+
     public Text dialougetext;
     public Text button1text, button2text;
     public Text scoretext;
@@ -23,6 +25,7 @@ public class DecisionScript : MonoBehaviour
     [TextArea(3, 10)]
     public string[] scenedialouge;
     public string[] buttons;
+    public string[] animate;
 
     int button1counter = 0;
     int button2counter = 0;
@@ -61,8 +64,13 @@ public class DecisionScript : MonoBehaviour
         {
             Debug.Log("Buttons " + b);
         }
+        int a;
+        for (a = 0; a > animate.Length; a++)
+        {
+            
+        }
         //Changes dialouge text based on the scene dialouge array
-        if(dialougetext.text == scenedialouge[0])
+        if (dialougetext.text == scenedialouge[0])
         {
             button1text.text = buttons[0];
             button2text.text = buttons[1];
@@ -100,6 +108,7 @@ public class DecisionScript : MonoBehaviour
             continuebox.SetActive(true);
             button_1.SetActive(false);
             button_2.SetActive(false);
+            anim.SetBool(animate[0], true);
         }
         if(dialougetext.text == scenedialouge[1])
         {
@@ -107,6 +116,7 @@ public class DecisionScript : MonoBehaviour
             continuebox.SetActive(true);
             button_1.SetActive(false);
             button_2.SetActive(false);
+            anim.SetBool(animate[0], true);
         }
         if (dialougetext.text == scenedialouge[2])
         {
@@ -114,6 +124,7 @@ public class DecisionScript : MonoBehaviour
             continuebox.SetActive(true);
             button_1.SetActive(false);
             button_2.SetActive(false);
+            anim.SetBool(animate[0], true);
         }
         button1counter++;
         
@@ -130,6 +141,7 @@ public class DecisionScript : MonoBehaviour
             continuebox.SetActive(true);
             button_2.SetActive(false);
             button_1.SetActive(false);
+            anim.SetBool(animate[0], true);
         }
         if (dialougetext.text == scenedialouge[1])
         {
@@ -137,6 +149,7 @@ public class DecisionScript : MonoBehaviour
             continuebox.SetActive(true);
             button_2.SetActive(false);
             button_1.SetActive(false);
+            anim.SetBool(animate[0], true);
         }
         if (dialougetext.text == scenedialouge[2])
         {
@@ -144,6 +157,7 @@ public class DecisionScript : MonoBehaviour
             continuebox.SetActive(true);
             button_2.SetActive(false);
             button_1.SetActive(false);
+            anim.SetBool(animate[0], true);
         }
         button2counter++;
 
