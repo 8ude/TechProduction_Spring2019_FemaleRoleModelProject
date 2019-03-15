@@ -230,70 +230,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &269155083
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 269155085}
-  - component: {fileID: 269155084}
-  m_Layer: 0
-  m_Name: EventHandeler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &269155084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269155083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 380661d374142f6499cc61b61db8af9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button1: {fileID: 251367689}
-  button2: {fileID: 1040160031}
-  continuebut: {fileID: 2082004711}
-  continuebox: {fileID: 2082004709}
-  dialougetext: {fileID: 1602453617}
-  button1text: {fileID: 1369082845}
-  button2text: {fileID: 1445698784}
-  dialouge:
-  - You cleaned up your own mess
-  - You chose to leave the mess alone
-  - You chose to get coffee
-  - You chose to win the game
-  scenedialouge:
-  - You spill coffee all over the floor, What do you do?
-  - You boss says somone need to play in the game and someone needs to get coffee.
-    What will you do?
-  buttons:
-  - Clean it up
-  - Thats not my job
-  - Get coffee
-  - Play the game
---- !u!4 &269155085
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 269155083}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &492658735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,3 +1178,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082004709}
   m_CullTransparentMesh: 0
+--- !u!1001 &4164347810462890449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4164347810195047130, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_Name
+      value: EventHandeler
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047132, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: button1
+      value: 
+      objectReference: {fileID: 251367689}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: button2
+      value: 
+      objectReference: {fileID: 1040160031}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: continuebut
+      value: 
+      objectReference: {fileID: 2082004711}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: continuebox
+      value: 
+      objectReference: {fileID: 2082004709}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: dialougetext
+      value: 
+      objectReference: {fileID: 1602453617}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: button1text
+      value: 
+      objectReference: {fileID: 1369082845}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: button2text
+      value: 
+      objectReference: {fileID: 1445698784}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf77a2e206238724b8d2c509ddeaaf84, type: 3}
