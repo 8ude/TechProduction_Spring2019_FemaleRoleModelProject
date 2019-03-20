@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Scenes/AvatarBuildingScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CharacterCreationScene.unity
+    guid: e7eec7e8bd299a14c9601791478c2e77
+  - enabled: 1
+    path: Assets/Scenes/DecisionScene.unity
+    guid: eed5ecb4e2c9a6c4a82140f6288aa0d4
   m_configObjects: {}
