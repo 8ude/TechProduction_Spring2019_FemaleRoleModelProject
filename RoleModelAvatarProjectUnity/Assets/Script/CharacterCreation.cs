@@ -57,8 +57,8 @@ public class CharacterCreation : MonoBehaviour
         LButtonText.text = leftbutText[index];
         RButtonText.text = rightbutText[index];
 
-        Debug.Log(leftbutText[button1counter]);
-        Debug.Log(rightbutText[button2counter]);
+        //Debug.Log(leftbutText[button1counter]);
+        //Debug.Log(rightbutText[button2counter]);
     }
 
     void LeftButClick()

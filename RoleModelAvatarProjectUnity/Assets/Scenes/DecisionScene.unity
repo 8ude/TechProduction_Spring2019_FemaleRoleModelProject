@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
         type: 3}
       propertyPath: dialouge.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
         type: 3}
@@ -198,6 +198,21 @@ PrefabInstance:
         type: 3}
       propertyPath: animate.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: dialouge2.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: buttons1.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: buttons2.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
         type: 3}
@@ -294,6 +309,66 @@ PrefabInstance:
         type: 3}
       propertyPath: animate.Array.data[0]
       value: Trigger1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: dialouge2.Array.data[0]
+      value: You cleaned up your own mess
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: dialouge2.Array.data[1]
+      value: You chose to get coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: dialouge2.Array.data[2]
+      value: You chose to get help
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: dialouge.Array.data[0]
+      value: You chose to leave the mess alone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: dialouge.Array.data[1]
+      value: You chose to win the game
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: dialouge.Array.data[2]
+      value: You chose to help them
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: buttons1.Array.data[0]
+      value: Leave the mess
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: buttons1.Array.data[1]
+      value: Win the game
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: buttons1.Array.data[2]
+      value: Help them
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: buttons2.Array.data[0]
+      value: Clean your mess
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: buttons2.Array.data[1]
+      value: Get coffee
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164347810195047133, guid: bf77a2e206238724b8d2c509ddeaaf84,
+        type: 3}
+      propertyPath: buttons2.Array.data[2]
+      value: Get help
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf77a2e206238724b8d2c509ddeaaf84, type: 3}
