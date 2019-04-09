@@ -40,7 +40,7 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex2 = 0;
     int diaindex = 0;
     int off = 1;
-    int on = 1;
+    int on = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -158,6 +158,7 @@ public class DecisionScript_Real : MonoBehaviour
         on++;
         off--;
         dialougetext.text = scenedialouge[index];
+
         butindex1++;
         butindex2++;
         diaindex++;
@@ -166,8 +167,9 @@ public class DecisionScript_Real : MonoBehaviour
         continuebox.SetActive(false);
         button_1.SetActive(true);
         button_2.SetActive(true);
-        background[off].SetActive(false);
         background[on].SetActive(true);
+        background[off].SetActive(false);
+
 
     }
 }
