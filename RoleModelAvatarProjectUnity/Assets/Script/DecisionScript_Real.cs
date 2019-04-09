@@ -31,7 +31,7 @@ public class DecisionScript_Real : MonoBehaviour
     public string[] animate;
 
     public GameObject[] background;
-    public string[] backanim;
+    //public string[] backanim;
 
     int button1counter = 0;
     int button2counter = 0;
@@ -39,6 +39,8 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex1 = 0;
     int butindex2 = 0;
     int diaindex = 0;
+    int off = 1;
+    int on = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -52,7 +54,7 @@ public class DecisionScript_Real : MonoBehaviour
         dialougetext.text = scenedialouge[0];
         continuebox.SetActive(false);
         score.SetActive(false);
-
+        background[0].SetActive(true);
 
 
     }
@@ -79,12 +81,12 @@ public class DecisionScript_Real : MonoBehaviour
         int b;
         for (b = 0; b > buttons1.Length; b++)
         {
-            Debug.Log("Buttons " + b);
+            //Debug.Log("Buttons " + b);
         }
         int b2;
         for (b2 = 0; b2 > buttons2.Length; b2++)
         {
-            Debug.Log("Buttons " + b);
+            //Debug.Log("Buttons " + b);
         }
         int a;
         for (a = 0; a > animate.Length; a++)
@@ -123,7 +125,7 @@ public class DecisionScript_Real : MonoBehaviour
             continuebox.SetActive(true);
             button_1.SetActive(false);
             button_2.SetActive(false);
-            anim.SetBool(animate[0], true);
+          //  anim.SetBool(animate[0], true);
         }
 
         button1counter++;
@@ -141,7 +143,7 @@ public class DecisionScript_Real : MonoBehaviour
             continuebox.SetActive(true);
             button_2.SetActive(false);
             button_1.SetActive(false);
-            anim.SetBool(animate[0], true);
+           // anim.SetBool(animate[0], true);
 
         }
        
@@ -153,6 +155,8 @@ public class DecisionScript_Real : MonoBehaviour
     {
 
         index++;
+        on++;
+        off--;
         dialougetext.text = scenedialouge[index];
         butindex1++;
         butindex2++;
@@ -162,6 +166,8 @@ public class DecisionScript_Real : MonoBehaviour
         continuebox.SetActive(false);
         button_1.SetActive(true);
         button_2.SetActive(true);
+        background[off].SetActive(false);
+        background[on].SetActive(true);
 
     }
 }
