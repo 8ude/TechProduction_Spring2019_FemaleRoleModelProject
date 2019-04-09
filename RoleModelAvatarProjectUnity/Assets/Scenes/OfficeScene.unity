@@ -1187,11 +1187,11 @@ MonoBehaviour:
     your idea and the other to get coffee." What do you do?
   - Your having lunch and a you drop your coffee. What do you do?
   buttons1:
-  - You talk back
+  - Talk back
   - Get Coffee
   - Clean it up
   buttons2:
-  - Keep quiet, look down, and continue with work
+  - Keep quiet
   - Start pitching
   - Clean it up
   animate: []
