@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &657420186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657420188}
+  - component: {fileID: 657420187}
+  - component: {fileID: 657420189}
+  m_Layer: 0
+  m_Name: EventHandeler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &657420188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657420186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &657420187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657420186}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380661d374142f6499cc61b61db8af9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  continuebut: {fileID: 0}
+  continuebox: {fileID: 0}
+  button_1: {fileID: 0}
+  button_2: {fileID: 0}
+  score: {fileID: 0}
+  dialougebox: {fileID: 0}
+  anim: {fileID: 0}
+  dialougetext: {fileID: 0}
+  button1text: {fileID: 0}
+  button2text: {fileID: 0}
+  scoretext: {fileID: 0}
+  dialouge:
+  - You chose to leave the mess alone
+  - You chose to win the game
+  - You chose to help them
+  scenedialouge:
+  - You spill coffee all over the floor, What do you do?
+  - You boss says somone need to play in the game and someone needs to get coffee.
+    What will you do?
+  - A fire breaks out in you building, you hear the screams of people coming from
+    a room.
+  buttons:
+  - Clean it up
+  - Thats not my job
+  - Get coffee
+  - Play the game
+  - Help them
+  - Get help
+  animate:
+  - Trigger1
+--- !u!114 &657420189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657420186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c653c47e5a4e8294cb14aa124b197e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  continuebut: {fileID: 0}
+  continuebox: {fileID: 0}
+  button_1: {fileID: 0}
+  button_2: {fileID: 0}
+  score: {fileID: 0}
+  dialougebox: {fileID: 0}
+  anim: {fileID: 0}
+  dialougetext: {fileID: 0}
+  button1text: {fileID: 0}
+  button2text: {fileID: 0}
+  scoretext: {fileID: 0}
+  dialouge:
+  - You chose to clean up the spill
+  - You chose to get cofee
+  - You chose to get help
+  dialouge2:
+  - You chose to leave the mess
+  - You chose to win the game
+  - You chose to help out
+  scenedialouge:
+  - You spill coffee all over the floor, What do you do?
+  - You boss says somone need to play in the game and someone needs to get coffee.
+    What will you do?
+  - You enter a playground and a mud puddle is in your way.
+  buttons1:
+  - Clean it up
+  - Get Coffee
+  - Get help
+  buttons2:
+  - Leave it be
+  - Win the Game
+  - Help Them
+  animate:
+  - Trigger1
+  background:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backanim: []
