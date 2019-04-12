@@ -1,7 +1,17 @@
 fileFormatVersion: 2
 guid: e794b4533130040eb9a9442dce5dc46a
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: girl_leftupperarm
+    21300002: girl_leftlowerarm
+    21300004: girl_rightupperarm
+    21300006: girl_rightlowerarm
+    21300008: girl_leftleg
+    21300010: girl_rightleg
+    21300012: girl_body
+    21300014: girl_leftlegsideview
+    21300016: girl_sideviewhead
+    21300018: girl_sideviewbody
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +50,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +79,264 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: girl_leftupperarm
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 391
+        width: 82
+        height: 89
+      alignment: 9
+      pivot: {x: 0.60083807, y: 0.6672332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f671fcc5429934ad99814362bbbb6c57
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_leftlowerarm
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 311
+        width: 89
+        height: 78
+      alignment: 9
+      pivot: {x: 0.8158842, y: 0.8180284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34cb20e80d3a4ae49f355c912ddc776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_rightupperarm
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 292
+        width: 68
+        height: 79
+      alignment: 9
+      pivot: {x: 0.6459189, y: 0.8140031}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62dc423e9a86a4112bd1083b672c8765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_rightlowerarm
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 204
+        width: 103
+        height: 84
+      alignment: 9
+      pivot: {x: 0.27521884, y: 0.834687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92665741167cf486fb757fc2f612ec32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_leftleg
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 81
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9e55aa481e343038e2de24e286200f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_rightleg
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 0
+        width: 72
+        height: 189
+      alignment: 9
+      pivot: {x: 0.29328176, y: 0.85874945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9fe5da3977b4a848a6a445a93fab64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_body
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 101
+        width: 174
+        height: 406
+      alignment: 9
+      pivot: {x: 0.48145092, y: 0.36883143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1cf554e23284e428c90cc5750fff49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_leftlegsideview
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 5
+        width: 207
+        height: 76
+      alignment: 9
+      pivot: {x: 0.89945567, y: 0.7175985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b665768eaaef4b1ab1964781685ce9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_sideviewhead
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 374
+        width: 142
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2b98b0f5181434ba0e21a3e76502b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: girl_sideviewbody
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 102
+        width: 143
+        height: 285
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47728267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f543478f31f8f49dcaf83377aaba5478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
