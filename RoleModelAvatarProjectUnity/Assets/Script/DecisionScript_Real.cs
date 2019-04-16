@@ -39,7 +39,7 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex1 = 0;
     int butindex2 = 0;
     int diaindex = 0;
-    int off = 1;
+    int off = 0;
     int on = 0;
 
     // Start is called before the first frame update
@@ -106,6 +106,7 @@ public class DecisionScript_Real : MonoBehaviour
             button_2.SetActive(false);
             continuebox.SetActive(false);
             dialougebox.SetActive(false);
+            background[2].SetActive(false);
             score.SetActive(true);
             float but1 =(button1counter / 3.0f) * 100;
             float but2 =(button2counter / 3.0f) * 100;
@@ -113,10 +114,8 @@ public class DecisionScript_Real : MonoBehaviour
             scoretext.text = "Your score was Male = " + but1 + "%" + " Female = " + but2 + "%";
         }
 
-        if(background[2])
-        {
-            background[1].SetActive(false);
-        }
+
+
 
 
     }
@@ -162,7 +161,8 @@ public class DecisionScript_Real : MonoBehaviour
 
         index++;
         on++;
-        off--;
+        off = on - 1;
+        //off--;
         dialougetext.text = scenedialouge[index];
 
         butindex1++;
