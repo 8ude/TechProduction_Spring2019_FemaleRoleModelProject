@@ -357,7 +357,12 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: 0, y: 256}
+      - {x: -243.47047, y: 79.108345}
+      - {x: -150.473, y: -207.10837}
+      - {x: 150.47305, y: -207.10834}
+      - {x: 243.47046, y: 79.10838}
     physicsShape: []
     bones: []
     spriteID: cfe8c3a17ec064b92ae1c99e627059ee
