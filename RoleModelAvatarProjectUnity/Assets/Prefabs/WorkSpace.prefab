@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076956242315626860}
   - component: {fileID: 4076956242315626863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WORKSPACE open door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076956243867682920}
   - component: {fileID: 8846599230886902323}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WorkSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076956243933189705}
   - component: {fileID: 4076956243933189704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WORKSPACE doors mid open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4076956244182060543}
   - component: {fileID: 4076956244182060542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WORKSPACE doors closed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

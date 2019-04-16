@@ -113,8 +113,7 @@ MonoBehaviour:
   - You spill coffee all over the floor, What do you do?
   - You boss says somone need to play in the game and someone needs to get coffee.
     What will you do?
-  - A fire breaks out in you building, you hear the screams of people coming from
-    a room.
+  - You enter a playground and a mud puddle is in your way.
   buttons1:
   - Clean it up
   - Get Coffee
@@ -125,3 +124,8 @@ MonoBehaviour:
   - Help Them
   animate:
   - Trigger1
+  background:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backanim: []
