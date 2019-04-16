@@ -113,6 +113,12 @@ public class DecisionScript_Real : MonoBehaviour
             scoretext.text = "Your score was Male = " + but1 + "%" + " Female = " + but2 + "%";
         }
 
+        if(background[2])
+        {
+            background[1].SetActive(false);
+        }
+
+
     }
 
     void Button1()
@@ -168,7 +174,9 @@ public class DecisionScript_Real : MonoBehaviour
         button_1.SetActive(true);
         button_2.SetActive(true);
         background[on].SetActive(true);
+
         background[off].SetActive(false);
+
 
 
     }
