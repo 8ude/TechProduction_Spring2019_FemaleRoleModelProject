@@ -39,11 +39,8 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex1 = 0;
     int butindex2 = 0;
     int diaindex = 0;
-<<<<<<< HEAD
+
     int off = 1;
-=======
-    int off = 0;
->>>>>>> parent of e8970d8... ?
     int on = 0;
 
     // Start is called before the first frame update
@@ -119,13 +116,12 @@ public class DecisionScript_Real : MonoBehaviour
         }
 
 
-<<<<<<< HEAD
-        if(background[2])
-        {
-            background[1].SetActive(false);
-        }
-=======
->>>>>>> parent of e8970d8... ?
+
+        //if(background[2])
+        //{
+        //    background[1].SetActive(false);
+        //}
+
 
 
 
