@@ -40,11 +40,7 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex2 = 0;
     int diaindex = 0;
     int off = 1;
-<<<<<<< HEAD
-    int on = 1;
-=======
     int on = 0;
->>>>>>> parent of 5b661b2... Updated Decision Script Working
 
     // Start is called before the first frame update
     void Start()
@@ -117,27 +113,14 @@ public class DecisionScript_Real : MonoBehaviour
             scoretext.text = "Your score was Male = " + but1 + "%" + " Female = " + but2 + "%";
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 5b661b2... Updated Decision Script Working
-=======
->>>>>>> parent of 5b661b2... Updated Decision Script Working
+
         if(background[2])
         {
             background[1].SetActive(false);
         }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 5b661b2... Updated Decision Script Working
-=======
->>>>>>> parent of 5b661b2... Updated Decision Script Working
-=======
->>>>>>> parent of 5b661b2... Updated Decision Script Working
+
     }
 
     void Button1()
