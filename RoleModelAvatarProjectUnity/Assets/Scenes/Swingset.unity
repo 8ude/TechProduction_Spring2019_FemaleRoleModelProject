@@ -121,8 +121,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7336533}
-  - component: {fileID: 7336532}
   - component: {fileID: 7336531}
+  - component: {fileID: 7336532}
   m_Layer: 0
   m_Name: Boy
   m_TagString: Untagged
@@ -191,7 +191,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ec3967950d44f4ed7bda2b3549bd2f7f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -3100,8 +3100,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1890738048}
-  - component: {fileID: 1890738047}
   - component: {fileID: 1890738046}
+  - component: {fileID: 1890738047}
   m_Layer: 0
   m_Name: Boy2
   m_TagString: Untagged
@@ -3170,7 +3170,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ec3967950d44f4ed7bda2b3549bd2f7f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
