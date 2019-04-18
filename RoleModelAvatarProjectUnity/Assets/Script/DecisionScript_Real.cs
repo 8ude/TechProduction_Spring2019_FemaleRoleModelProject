@@ -39,7 +39,11 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex1 = 0;
     int butindex2 = 0;
     int diaindex = 0;
+<<<<<<< HEAD
     int off = 1;
+=======
+    int off = 0;
+>>>>>>> parent of e8970d8... ?
     int on = 0;
 
     // Start is called before the first frame update
@@ -106,6 +110,7 @@ public class DecisionScript_Real : MonoBehaviour
             button_2.SetActive(false);
             continuebox.SetActive(false);
             dialougebox.SetActive(false);
+            background[2].SetActive(false);
             score.SetActive(true);
             float but1 =(button1counter / 3.0f) * 100;
             float but2 =(button2counter / 3.0f) * 100;
@@ -114,10 +119,13 @@ public class DecisionScript_Real : MonoBehaviour
         }
 
 
+<<<<<<< HEAD
         if(background[2])
         {
             background[1].SetActive(false);
         }
+=======
+>>>>>>> parent of e8970d8... ?
 
 
 
@@ -164,8 +172,10 @@ public class DecisionScript_Real : MonoBehaviour
 
         index++;
         on++;
-        off--;
+        off = on - 1;
+        //off--;
         dialougetext.text = scenedialouge[index];
+
         butindex1++;
         butindex2++;
         diaindex++;
@@ -174,8 +184,11 @@ public class DecisionScript_Real : MonoBehaviour
         continuebox.SetActive(false);
         button_1.SetActive(true);
         button_2.SetActive(true);
-        background[off].SetActive(false);
         background[on].SetActive(true);
+
+        background[off].SetActive(false);
+
+
 
     }
 }
