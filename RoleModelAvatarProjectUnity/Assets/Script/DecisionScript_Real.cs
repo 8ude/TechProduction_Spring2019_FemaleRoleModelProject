@@ -40,7 +40,11 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex2 = 0;
     int diaindex = 0;
     int off = 1;
+<<<<<<< HEAD
     int on = 1;
+=======
+    int on = 0;
+>>>>>>> parent of 5b661b2... Updated Decision Script Working
 
     // Start is called before the first frame update
     void Start()
@@ -115,7 +119,10 @@ public class DecisionScript_Real : MonoBehaviour
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 5b661b2... Updated Decision Script Working
 =======
 >>>>>>> parent of 5b661b2... Updated Decision Script Working
         if(background[2])
@@ -125,6 +132,9 @@ public class DecisionScript_Real : MonoBehaviour
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 5b661b2... Updated Decision Script Working
+=======
 >>>>>>> parent of 5b661b2... Updated Decision Script Working
 =======
 >>>>>>> parent of 5b661b2... Updated Decision Script Working
