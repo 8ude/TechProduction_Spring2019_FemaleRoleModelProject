@@ -114,13 +114,19 @@ public class DecisionScript_Real : MonoBehaviour
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 5b661b2... Updated Decision Script Working
         if(background[2])
         {
             background[1].SetActive(false);
         }
 
 
+<<<<<<< HEAD
+>>>>>>> parent of 5b661b2... Updated Decision Script Working
+=======
 >>>>>>> parent of 5b661b2... Updated Decision Script Working
     }
 
