@@ -40,7 +40,7 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex2 = 0;
     int diaindex = 0;
     int off = 1;
-    int on = 0;
+    int on = 1;
 
     // Start is called before the first frame update
     void Start()
