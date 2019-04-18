@@ -380,5 +380,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7241229073280966641, guid: 4f924eb050f094e149f6c1a0caacf8b7,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1654521463
+      objectReference: {fileID: 0}
+    - target: {fileID: 7241229073280966641, guid: 4f924eb050f094e149f6c1a0caacf8b7,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f924eb050f094e149f6c1a0caacf8b7, type: 3}
