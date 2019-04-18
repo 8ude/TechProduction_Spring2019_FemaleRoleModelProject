@@ -113,6 +113,15 @@ public class DecisionScript_Real : MonoBehaviour
             scoretext.text = "Your score was Male = " + but1 + "%" + " Female = " + but2 + "%";
         }
 
+<<<<<<< HEAD
+=======
+        if(background[2])
+        {
+            background[1].SetActive(false);
+        }
+
+
+>>>>>>> parent of 5b661b2... Updated Decision Script Working
     }
 
     void Button1()
