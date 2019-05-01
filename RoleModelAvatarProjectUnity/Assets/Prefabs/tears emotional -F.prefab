@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1929854530838862612}
   - component: {fileID: 1929854530838862613}
   - component: {fileID: 1929854530838862614}
+  - component: {fileID: 1929854530838862615}
   m_Layer: 0
   m_Name: tears emotional -F
   m_TagString: Untagged
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4cffa1aebff929f49bc3ebcec4d1d6ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6ddedd0ed68c43adba6766f68277e3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,7 +91,7 @@ Animator:
   m_GameObject: {fileID: 1929854530838862608}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e50298ea6e7d724395f658ea32c458f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0c47e09e57cb947faa914b8acab69a6b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -99,3 +100,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1929854530838862615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929854530838862608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b91fdd9ab33d43879632dc51aabeb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poofParticles: {fileID: 8082392927381322042, guid: 0ff51e97421a846848ad232f054ae507,
+    type: 3}
