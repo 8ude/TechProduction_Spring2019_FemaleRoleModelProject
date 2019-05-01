@@ -277,7 +277,7 @@ PrefabInstance:
     - target: {fileID: 657420187, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
       propertyPath: dialougebox
       value: 
-      objectReference: {fileID: 168546749}
+      objectReference: {fileID: 0}
     - target: {fileID: 657420187, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
       propertyPath: anim
       value: 
@@ -285,7 +285,7 @@ PrefabInstance:
     - target: {fileID: 657420187, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
       propertyPath: dialougetext
       value: 
-      objectReference: {fileID: 1314524544}
+      objectReference: {fileID: 0}
     - target: {fileID: 657420187, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
       propertyPath: button1text
       value: 
@@ -329,7 +329,7 @@ PrefabInstance:
     - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
       propertyPath: dialougebox
       value: 
-      objectReference: {fileID: 168546749}
+      objectReference: {fileID: 559359715}
     - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
       propertyPath: anim
       value: 
@@ -337,7 +337,7 @@ PrefabInstance:
     - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
       propertyPath: dialougetext
       value: 
-      objectReference: {fileID: 1314524544}
+      objectReference: {fileID: 474378538}
     - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
       propertyPath: button1text
       value: 
@@ -350,14 +350,73 @@ PrefabInstance:
       propertyPath: scoretext
       value: 
       objectReference: {fileID: 232804188}
-    m_RemovedComponents: []
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: scenedialouge.Array.data[0]
+      value: A huge mud puddle formed after a heavy storm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: dialouge.Array.data[0]
+      value: My mom will get mad if my dress gets all dirty (girly)-starts weeping
+        and heading home
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: buttons1.Array.data[0]
+      value: Go around it
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: buttons2.Array.data[0]
+      value: Charge ahead
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: dialouge2.Array.data[0]
+      value: "A true man makes a mark! Let\u2019s get dirty!!! \r\ncharges forward
+        and dives in first\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: dialouge.Array.data[2]
+      value: Yea wait your turn sweet heart the  big boys are playing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: dialouge.Array.data[1]
+      value: Yeah cry like the baby you are! HA HA HA HA!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: dialouge2.Array.data[1]
+      value: You aint got time to bleed move it soldier!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: dialouge2.Array.data[2]
+      value: Hit the road jack and dont come back. HA HA HA!!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: scenedialouge.Array.data[1]
+      value: You are playing tag with a few close friends. You suddenly trip and fall
+        on your arm.
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: scenedialouge.Array.data[2]
+      value: The playground you frequent just added new swing sets. You wanted to
+        get the first turn, but another kid blocks your way.
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: buttons1.Array.data[1]
+      value: Cry it out
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: buttons1.Array.data[2]
+      value: Wait for your turn
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: buttons2.Array.data[1]
+      value: Walk it off
+      objectReference: {fileID: 0}
+    - target: {fileID: 657420189, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
+      propertyPath: buttons2.Array.data[2]
+      value: Take the swing
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 657420187, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d1817e046acc11f4cb39c30fbb177483, type: 3}
---- !u!1 &168546749 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 799700167363666908, guid: e43518aea1446a54586b1fb07089dfd5,
-    type: 3}
-  m_PrefabInstance: {fileID: 799700167464055393}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &232804188 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 799700167411612989, guid: e43518aea1446a54586b1fb07089dfd5,
@@ -419,6 +478,24 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &474378538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7523975498946997971, guid: e43518aea1446a54586b1fb07089dfd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 799700167464055393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &559359715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3311829734469659280, guid: e43518aea1446a54586b1fb07089dfd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 799700167464055393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &849003269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583,18 +660,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 799700167464055393}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1314524544 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 799700168509882337, guid: e43518aea1446a54586b1fb07089dfd5,
-    type: 3}
-  m_PrefabInstance: {fileID: 799700167464055393}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1333026963 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3287816142433023191, guid: 39a8199d56e734aa78f48778628ebe00,
@@ -995,7 +1060,7 @@ PrefabInstance:
     - target: {fileID: 799700168389011138, guid: e43518aea1446a54586b1fb07089dfd5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 799700168389011142, guid: e43518aea1446a54586b1fb07089dfd5,
         type: 3}
@@ -1604,7 +1669,7 @@ PrefabInstance:
     - target: {fileID: 7741675399100311092, guid: b759d2ad1a7de4b2baa0a25a393540e4,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7741675399100311099, guid: b759d2ad1a7de4b2baa0a25a393540e4,
         type: 3}

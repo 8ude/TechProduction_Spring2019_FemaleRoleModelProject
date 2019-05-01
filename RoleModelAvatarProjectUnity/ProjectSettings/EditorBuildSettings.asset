@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DecisionScene.unity
     guid: eed5ecb4e2c9a6c4a82140f6288aa0d4
+  - enabled: 1
+    path: Assets/Scenes/playground scene.unity
+    guid: 597745033d1a24c6595ea7b50b183b8c
   m_configObjects: {}
