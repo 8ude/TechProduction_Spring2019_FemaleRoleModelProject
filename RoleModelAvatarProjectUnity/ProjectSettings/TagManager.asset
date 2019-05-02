@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Background
+  - Devil
   - 
   - 
   - 
@@ -41,12 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: 'front '
-    uniqueID: 1650014939
+  - name: Background
+    uniqueID: 531301933
     locked: 0
   - name: forground
-    uniqueID: 671511617
+    uniqueID: 1654521463
     locked: 0
-  - name: background
-    uniqueID: 1572409413
+  - name: front
+    uniqueID: 3385378159
     locked: 0

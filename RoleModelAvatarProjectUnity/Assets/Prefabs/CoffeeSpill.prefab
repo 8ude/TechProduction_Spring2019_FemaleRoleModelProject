@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5295921194779212584}
   - component: {fileID: 5295921194779212585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CoffeeSpill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5295921195966511494}
   - component: {fileID: 5295921195966511489}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WORKSPACE coffee table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5295921196695427518}
   - component: {fileID: 5295921196695427513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WORKSPACE coffee table(coffee spill)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
