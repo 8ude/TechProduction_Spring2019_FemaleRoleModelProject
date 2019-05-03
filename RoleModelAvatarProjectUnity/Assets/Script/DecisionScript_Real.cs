@@ -15,6 +15,9 @@ public class DecisionScript_Real : MonoBehaviour
     public GameObject score;
     public GameObject dialougebox;
 
+    public GameObject[] MaleAnimations;
+    public GameObject[] FemaleAnimations;
+
     public Animator anim;
 
     public Text dialougetext;
@@ -30,7 +33,14 @@ public class DecisionScript_Real : MonoBehaviour
     public string[] buttons2;
     public string[] animate;
 
+    string Male;
+    string Female;
+
     public GameObject[] background;
+
+    public AudioClip[] sounds;
+    public AudioClip soundHolder;
+    private AudioSource audio;
     //public string[] backanim;
 
     int button1counter = 0;
@@ -56,6 +66,8 @@ public class DecisionScript_Real : MonoBehaviour
         continuebox.SetActive(false);
         score.SetActive(false);
         background[0].SetActive(true);
+        audio = GetComponent<AudioSource>();
+
 
 
     }
@@ -64,37 +76,45 @@ public class DecisionScript_Real : MonoBehaviour
     void Update()
     {
 
-        int i;
-        for (i = 0; i > dialouge.Length; i++)
-        {
-            //Debug.Log("Dialouge " + i);
-        }
-        int i2;
-        for (i2 = 0; i2 > dialouge2.Length; i2++)
-        {
-            //Debug.Log("Dialouge " + i);
-        }
-        int t;
-        for (t = 0; t > scenedialouge.Length; t++)
-        {
-            //Debug.Log("SceneDialouge " + t);
-        }
-        int b;
-        for (b = 0; b > buttons1.Length; b++)
-        {
-            //Debug.Log("Buttons " + b);
-        }
-        int b2;
-        for (b2 = 0; b2 > buttons2.Length; b2++)
-        {
-            //Debug.Log("Buttons " + b);
-        }
-        int a;
-        for (a = 0; a > animate.Length; a++)
-        {
+        //int i;
+        //for (i = 0; i > dialouge.Length; i++)
+        //{
+        //    //Debug.Log("Dialouge " + i);
+        //}
+        //int i2;
+        //for (i2 = 0; i2 > dialouge2.Length; i2++)
+        //{
+        //    //Debug.Log("Dialouge " + i);
+        //}
+        //int t;
+        //for (t = 0; t > scenedialouge.Length; t++)
+        //{
+        //    //Debug.Log("SceneDialouge " + t);
+        //}
+        //int b;
+        //for (b = 0; b > buttons1.Length; b++)
+        //{
+        //    //Debug.Log("Buttons " + b);
+        //}
+        //int b2;
+        //for (b2 = 0; b2 > buttons2.Length; b2++)
+        //{
+        //    //Debug.Log("Buttons " + b);
+        //}
+        //int a;
+        //for (a = 0; a > animate.Length; a++)
+        //{
 
-        }
+        //}
+
+        soundHolder = sounds[index];
+        audio.clip = soundHolder;
+        audio.Play();
+        
         //Changes dialouge text based on the scene dialouge array
+        Male = PlayerPrefs.GetString("Player Gender", "Male");
+        Female = PlayerPrefs.GetString("Player Gender", "Female");
+
         button1text.text = buttons1[butindex1];
         button2text.text = buttons2[butindex2];
 
@@ -115,16 +135,14 @@ public class DecisionScript_Real : MonoBehaviour
             scoretext.text = "Your score was Male = " + but1 + "%" + " Female = " + but2 + "%";
         }
 
-
-
-        //if(background[2])
-        //{
-        //    background[1].SetActive(false);
-        //}
-
-
-
-
+    }
+    //Plays audio and waits for it to finish
+    IEnumerator waitforaudio()
+    {
+        audio.Play();
+        yield return new WaitWhile(() => audio.isPlaying);
+        background[0].SetActive(false);
+        //do something
     }
 
     void Button1()
@@ -141,6 +159,11 @@ public class DecisionScript_Real : MonoBehaviour
         }
 
         button1counter++;
+
+        if (Female == PlayerPrefs.GetString("Player Gender", "Female"))
+        {
+            FemaleAnimations[0].SetActive(true);
+        }
 
 
 
@@ -160,6 +183,10 @@ public class DecisionScript_Real : MonoBehaviour
         }
        
         button2counter++;
+        if (Male == PlayerPrefs.GetString("Player Gender", "Male"))
+        {
+            MaleAnimations[0].SetActive(true);
+        }
 
 
     }
@@ -184,7 +211,9 @@ public class DecisionScript_Real : MonoBehaviour
 
         background[off].SetActive(false);
 
-
-
+    }
+    void Continuebut()
+    {
+        StartCoroutine(waitforaudio());
     }
 }

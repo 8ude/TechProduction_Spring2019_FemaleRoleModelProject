@@ -20,7 +20,9 @@ public class CharacterCreation : MonoBehaviour
     public Text RButtonText;
 
     public string[] leftbutText;
+    public GameObject[] leftbutObjects;
     public string[] rightbutText;
+    public GameObject[] rightbutObjects;
 
     private string[] choice;
 
@@ -43,16 +45,16 @@ public class CharacterCreation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int l;
-        for(l = 0; l > leftbutText.Length; l++)
-        {
+        //int l;
+        //for(l = 0; l > leftbutText.Length; l++)
+        //{
 
-        }
-        int r;
-        for (r = 0; r > rightbutText.Length; l++)
-        {
+        //}
+        //int r;
+        //for (r = 0; r > rightbutText.Length; l++)
+        //{
 
-        }
+        //}
         //Turns button text into array text
         LButtonText.text = leftbutText[index];
         RButtonText.text = rightbutText[index];
@@ -63,6 +65,12 @@ public class CharacterCreation : MonoBehaviour
 
     void LeftButClick()
     {
+        if(index == 0)
+        {
+            Debug.Log("User Chose Male");
+            PlayerPrefs.SetString("PlayerGender", "Male");
+        }
+        leftbutObjects[index].SetActive(true);
         L_but.SetActive(false);
         R_but.SetActive(false);
         conBut.SetActive(true);
@@ -70,6 +78,12 @@ public class CharacterCreation : MonoBehaviour
     }
     void RightButClick()
     {
+        if(index == 0)
+        {
+            Debug.Log("User Chbose Female");
+            PlayerPrefs.SetString("PlayerGender", "Female");
+        }
+        rightbutObjects[index].SetActive(true);
         L_but.SetActive(false);
         R_but.SetActive(false);
         conBut.SetActive(true);
@@ -84,7 +98,7 @@ public class CharacterCreation : MonoBehaviour
         R_but.SetActive(true);
         if (index == leftbutText.Length)
         {
-            SceneManager.LoadScene("DecisionScene");
+            SceneManager.LoadScene(1);
             L_but.SetActive(false);
             R_but.SetActive(false);
             conBut.SetActive(false);
