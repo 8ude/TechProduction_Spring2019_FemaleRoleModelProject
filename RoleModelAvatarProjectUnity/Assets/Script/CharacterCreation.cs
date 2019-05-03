@@ -20,7 +20,9 @@ public class CharacterCreation : MonoBehaviour
     public Text RButtonText;
 
     public string[] leftbutText;
+    public GameObject[] leftbutObjects;
     public string[] rightbutText;
+    public GameObject[] rightbutObjects;
 
     private string[] choice;
 
@@ -43,6 +45,7 @@ public class CharacterCreation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         int l;
         for(l = 0; l > leftbutText.Length; l++)
         {
@@ -53,6 +56,7 @@ public class CharacterCreation : MonoBehaviour
         {
 
         }
+        */
         //Turns button text into array text
         LButtonText.text = leftbutText[index];
         RButtonText.text = rightbutText[index];
@@ -63,6 +67,14 @@ public class CharacterCreation : MonoBehaviour
 
     void LeftButClick()
     {
+        //if the user clicks on the left at first, then they chose male
+        if (index == 0)
+        {
+            Debug.Log("User Chose Male");
+            PlayerPrefs.SetString("PlayerGender", "Male");
+        }
+        //turn on the corresponding object to trigger the animation
+        leftbutObjects[index].SetActive(true);
         L_but.SetActive(false);
         R_but.SetActive(false);
         conBut.SetActive(true);
@@ -70,6 +82,14 @@ public class CharacterCreation : MonoBehaviour
     }
     void RightButClick()
     {
+        //if the user clicks on the right at first, then they chose female
+        if (index == 0)
+        {
+            Debug.Log("User Chose Female");
+            PlayerPrefs.SetString("PlayerGender", "Female");
+        }
+        //turn on the corresponding object to trigger the animation
+        rightbutObjects[index].SetActive(true);
         L_but.SetActive(false);
         R_but.SetActive(false);
         conBut.SetActive(true);
@@ -84,12 +104,12 @@ public class CharacterCreation : MonoBehaviour
         R_but.SetActive(true);
         if (index == leftbutText.Length)
         {
-            SceneManager.LoadScene("DecisionScene");
+            SceneManager.LoadScene(1);
             L_but.SetActive(false);
             R_but.SetActive(false);
             conBut.SetActive(false);
         }
     }
 
-    
+
 }
