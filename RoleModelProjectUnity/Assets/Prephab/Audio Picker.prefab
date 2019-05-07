@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 635009694199408331}
   - component: {fileID: 635009694199408330}
   - component: {fileID: 635009694199408332}
+  - component: {fileID: 1954103910}
   m_Layer: 0
   m_Name: Audio Picker
   m_TagString: Untagged
@@ -39,7 +40,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635009694199408329}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d29c336135db4746b2e5233d730ad75, type: 3}
   m_Name: 
@@ -111,7 +112,7 @@ MonoBehaviour:
   - percentage: 100
     clipToPlay: {fileID: 8300000, guid: e520d489c6b0e4c019d2eccb731e4e1a, type: 3}
     hasPlayed: 0
-  inputValue: 50
+  inputValue: 0
 --- !u!82 &635009694199408332
 AudioSource:
   m_ObjectHideFlags: 0
@@ -208,3 +209,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1954103910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635009694199408329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bf1bb8d3aef754c9011b2b6b677f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meditationClips: []
+  relaxClips: []
+  stressClips:
+  - clipToPlay: {fileID: 8300000, guid: edde050cbe9a31948bb62b82f3f6b382, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 83da2f30d9691f54590b3b9b1dc19fb8, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 0a249493ca9fae6478edf609da8a0c2e, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 409c4dfacb75a3546bc9347dfbfaa38a, type: 3}
+    hasPlayed: 0
+  attentionClips: []
+  isPlayingVO: 0

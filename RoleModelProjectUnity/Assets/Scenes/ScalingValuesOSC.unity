@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -260,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &219824151
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5665,13 +5665,15 @@ MonoBehaviour:
   osc: {fileID: 938517464}
   inputVal: {fileID: 1074653133}
   minimumBetaValue: 0
-  maximumBetaValue: 6
-  o1Val: 0
-  o2Val: 0
-  t3Val: 0
-  t4Val: 0
+  maximumBetaValue: 100
+  attentionVal: 0
+  stressVal: 0
+  focusVal: 0
+  meditationVal: 0
   dummySlider: 0
   useDummySlider: 0
+  currentState: 0
+  stateValues: []
 --- !u!114 &938517464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6007,6 +6009,8 @@ MonoBehaviour:
   rend: {fileID: 0}
   inputval: {fileID: 0}
   currAlpha: 0
+  myState: 0
+  receiveEmotivScript: {fileID: 0}
   bciFadeInStart: 0
   bciFadeInEnd: 0
   bciFadeOutStart: 0
@@ -6526,7 +6530,7 @@ PrefabInstance:
     - target: {fileID: 426715412927697470, guid: e9488ced17307ac4b9a0d7bfd3de0198,
         type: 3}
       propertyPath: m_Name
-      value: hades
+      value: hades-stress
       objectReference: {fileID: 0}
     - target: {fileID: 426715412927697470, guid: e9488ced17307ac4b9a0d7bfd3de0198,
         type: 3}
@@ -6648,6 +6652,16 @@ PrefabInstance:
       propertyPath: bciFadeOutEnd
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 426715412927697469, guid: e9488ced17307ac4b9a0d7bfd3de0198,
+        type: 3}
+      propertyPath: myState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 426715412927697469, guid: e9488ced17307ac4b9a0d7bfd3de0198,
+        type: 3}
+      propertyPath: receiveEmotivScript
+      value: 
+      objectReference: {fileID: 938517463}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9488ced17307ac4b9a0d7bfd3de0198, type: 3}
 --- !u!1001 &1786884673738550400
@@ -6660,7 +6674,7 @@ PrefabInstance:
     - target: {fileID: 1786884674058315426, guid: 35bc374f3c73f3b4793fed1d237bc8bf,
         type: 3}
       propertyPath: m_Name
-      value: scooby doo
+      value: scooby doo-attention
       objectReference: {fileID: 0}
     - target: {fileID: 1786884674058315426, guid: 35bc374f3c73f3b4793fed1d237bc8bf,
         type: 3}
@@ -6782,6 +6796,11 @@ PrefabInstance:
       propertyPath: bciFadeOutEnd
       value: 85
       objectReference: {fileID: 0}
+    - target: {fileID: 1786884674058315427, guid: 35bc374f3c73f3b4793fed1d237bc8bf,
+        type: 3}
+      propertyPath: receiveEmotivScript
+      value: 
+      objectReference: {fileID: 938517463}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35bc374f3c73f3b4793fed1d237bc8bf, type: 3}
 --- !u!1001 &2438771826753055457
@@ -6794,7 +6813,7 @@ PrefabInstance:
     - target: {fileID: 2438771826983255684, guid: c51e55b1c3125e44c9ff93589472224a,
         type: 3}
       propertyPath: m_Name
-      value: tinkerbell
+      value: tinkerbell-focus
       objectReference: {fileID: 0}
     - target: {fileID: 2438771826983255684, guid: c51e55b1c3125e44c9ff93589472224a,
         type: 3}
@@ -6916,6 +6935,16 @@ PrefabInstance:
       propertyPath: bciFadeOutEnd
       value: 95
       objectReference: {fileID: 0}
+    - target: {fileID: 2438771826983255687, guid: c51e55b1c3125e44c9ff93589472224a,
+        type: 3}
+      propertyPath: myState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438771826983255687, guid: c51e55b1c3125e44c9ff93589472224a,
+        type: 3}
+      propertyPath: receiveEmotivScript
+      value: 
+      objectReference: {fileID: 938517463}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c51e55b1c3125e44c9ff93589472224a, type: 3}
 --- !u!1001 &6781505180561180017
@@ -6933,7 +6962,7 @@ PrefabInstance:
     - target: {fileID: 6781505180591856581, guid: d99da94ef5ebff84183111e0ddcf6d3a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6781505180591856581, guid: d99da94ef5ebff84183111e0ddcf6d3a,
         type: 3}
@@ -7055,6 +7084,11 @@ PrefabInstance:
       propertyPath: bciFadeOutEnd
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 6781505180591856580, guid: d99da94ef5ebff84183111e0ddcf6d3a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d99da94ef5ebff84183111e0ddcf6d3a, type: 3}
 --- !u!1001 &7736284171016412448
@@ -7067,7 +7101,7 @@ PrefabInstance:
     - target: {fileID: 7736284171912488321, guid: 33b1e2b58f512a04a94935fb6c496aae,
         type: 3}
       propertyPath: m_Name
-      value: yoda
+      value: yoda-meditation
       objectReference: {fileID: 0}
     - target: {fileID: 7736284171912488322, guid: 33b1e2b58f512a04a94935fb6c496aae,
         type: 3}
@@ -7134,6 +7168,16 @@ PrefabInstance:
       propertyPath: inputval
       value: 
       objectReference: {fileID: 1074653133}
+    - target: {fileID: 7736284171912488323, guid: 33b1e2b58f512a04a94935fb6c496aae,
+        type: 3}
+      propertyPath: myState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7736284171912488323, guid: 33b1e2b58f512a04a94935fb6c496aae,
+        type: 3}
+      propertyPath: receiveEmotivScript
+      value: 
+      objectReference: {fileID: 938517463}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b1e2b58f512a04a94935fb6c496aae, type: 3}
 --- !u!1001 &9208809315805786578
@@ -7156,7 +7200,7 @@ PrefabInstance:
     - target: {fileID: 9208809315202198877, guid: 8293c1062d0c7334fae5d169e1500d75,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9208809315202198851, guid: 8293c1062d0c7334fae5d169e1500d75,
         type: 3}
@@ -7267,6 +7311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: bciFadeOutEnd
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 9208809315202198850, guid: 8293c1062d0c7334fae5d169e1500d75,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8293c1062d0c7334fae5d169e1500d75, type: 3}
