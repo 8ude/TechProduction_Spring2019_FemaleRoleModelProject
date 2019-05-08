@@ -110,6 +110,15 @@ public class DecisionScript_Real : MonoBehaviour
         {
             MaleAnimations[0].SetActive(false);
         }
+        if(audioS.clip == sounds[2])
+        {
+            MaleAnimations[2].SetActive(true);
+        }
+        if(audioS.clip == sounds[3])
+        {
+            FemaleAnimations[1].SetActive(true);
+        }
+
 
 
         //Changes dialouge text based on the scene dialouge array
@@ -137,8 +146,15 @@ public class DecisionScript_Real : MonoBehaviour
         audioS.clip = sounds[1];
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
+        contbutton.SetActive(true);
+        audioS.clip = sounds[2];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        audioS.clip = sounds[3];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
         //do something
-        
+
 
     }
     public IEnumerator Waitforanim()
@@ -148,7 +164,7 @@ public class DecisionScript_Real : MonoBehaviour
         MaleAnimations[1].SetActive(true);
         yield return new WaitForSeconds(4);
         MaleAnimations[1].SetActive(false);
-        contbutton.SetActive(true);
+        //contbutton.SetActive(true);
     }
 
     void Button1()
@@ -211,8 +227,9 @@ public class DecisionScript_Real : MonoBehaviour
         Debug.Log("Continue = " + index);
 
         continuebox.SetActive(false);
-        button_1.SetActive(true);
-        button_2.SetActive(true);
+        button_1.SetActive(false);
+        button_2.SetActive(false);
+        dialougebox.SetActive(false);
         background[on].SetActive(true);
 
         background[off].SetActive(false);
@@ -220,9 +237,10 @@ public class DecisionScript_Real : MonoBehaviour
     }
     void Continuebut()
     {
+        contbutton.SetActive(false);
         button_1.SetActive(true);
         button_2.SetActive(true);
         dialougebox.SetActive(true);
-        contbutton.SetActive(false);
+
     }
 }
