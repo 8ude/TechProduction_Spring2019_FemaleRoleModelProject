@@ -74,6 +74,7 @@ public class DecisionScript_Real : MonoBehaviour
         audioS = GetComponent<AudioSource>();
         audioS.clip = sounds[0];
         StartCoroutine(Waitforaudio());
+        
 
 
 
@@ -136,6 +137,13 @@ public class DecisionScript_Real : MonoBehaviour
             scoretext.text = "Your score was Male = " + but1 + "%" + " Female = " + but2 + "%";
         }
 
+        if(contbutton.activeInHierarchy)
+        {
+            audioS.Stop();
+        }
+
+
+
     }
     //Plays audio and waits for it to finish
     public IEnumerator Waitforaudio()
@@ -147,15 +155,30 @@ public class DecisionScript_Real : MonoBehaviour
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
         contbutton.SetActive(true);
+
+        //do something
+
+
+    }
+    public IEnumerator Waitforaudio2()
+    {
         audioS.clip = sounds[2];
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
         audioS.clip = sounds[3];
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
-        //do something
-
-
+        contbutton.SetActive(true);
+    }
+    public IEnumerator Waitforaudio3()
+    {
+        audioS.clip = sounds[4];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        audioS.clip = sounds[5];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        contbutton.SetActive(true);
     }
     public IEnumerator Waitforanim()
     {
@@ -233,10 +256,19 @@ public class DecisionScript_Real : MonoBehaviour
         background[on].SetActive(true);
 
         background[off].SetActive(false);
+        if(audioS.clip == sounds[1])
+        {
+            StartCoroutine(Waitforaudio2());
+        }
+        if (audioS.clip == sounds[3])
+        {
+            StartCoroutine(Waitforaudio2());
+        }
 
     }
     void Continuebut()
     {
+        sound++;
         contbutton.SetActive(false);
         button_1.SetActive(true);
         button_2.SetActive(true);
