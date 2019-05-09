@@ -14,8 +14,8 @@ public class ReceiveEmotiv : MonoBehaviour {
 	//we need to find a good range of values to work with
 	//in the final version, the manufacturers will help us with
 	//our data stream
-	public float minimumBetaValue = 0f;
-	public float maximumBetaValue = 500f;
+	public float minimumStateValue = 0f;
+	public float maximumStateValue = 500f;
 	
 
 	//these are public just so that we can see them, but should not be set in the inspector
@@ -40,6 +40,8 @@ public class ReceiveEmotiv : MonoBehaviour {
 	public float sameStateRepeatTime = 30f;
 	public float sameStateTimer = 0f;
 
+	private bool delayedChangeState = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -54,6 +56,8 @@ public class ReceiveEmotiv : MonoBehaviour {
 
 		currentState = (EmotionalState)4;
 		previousState = (EmotionalState)4;
+
+		delayedChangeState = false;
 	}
 
 	// Update is called once per frame
@@ -67,39 +71,35 @@ public class ReceiveEmotiv : MonoBehaviour {
 		}
 	}
 
-	//Maps T3 beta values to the Red color channel
 	void AttentionToStoredFloat(OscMessage message) {
 		float inputFloat = message.GetFloat(0);
 
-		Mathf.Clamp(inputFloat, minimumBetaValue, maximumBetaValue);
+		Mathf.Clamp(inputFloat, minimumStateValue, maximumStateValue);
 
 		attentionVal = inputFloat;
 
 	}
-
-	//Maps T4 beta values to the Green color channel
+	
 	void StressToStoredFloat(OscMessage message) {
 		float inputFloat = message.GetFloat(0);
 
-		inputFloat = Mathf.Clamp(inputFloat, minimumBetaValue, maximumBetaValue);
+		inputFloat = Mathf.Clamp(inputFloat, minimumStateValue, maximumStateValue);
 
 		stressVal = inputFloat;
 	}
-
-	//Maps 01 beta values to the Blue color channel
+	
 	void RelaxToStoredFloat(OscMessage message) {
 		float inputFloat = message.GetFloat(0);
 
-		inputFloat = Mathf.Clamp(inputFloat, minimumBetaValue, maximumBetaValue);
+		inputFloat = Mathf.Clamp(inputFloat, minimumStateValue, maximumStateValue);
 		relaxVal = inputFloat;
 
 	}
 
-	//Map 02 beta values to scale the object
 	void MeditationToStoredFloat(OscMessage message) {
 		float inputFloat = message.GetFloat(0);
 
-		inputFloat = Mathf.Clamp(inputFloat, minimumBetaValue, maximumBetaValue);
+		inputFloat = Mathf.Clamp(inputFloat, minimumStateValue, maximumStateValue);
 		meditationVal = inputFloat;
 	}
 
@@ -110,6 +110,8 @@ public class ReceiveEmotiv : MonoBehaviour {
 
 	public void UpdateEmotionalState() {
 
+
+		
 		//if the brainbit is connected, find the dominant value
 		if (!debugMode) {
 
@@ -130,32 +132,50 @@ public class ReceiveEmotiv : MonoBehaviour {
 		}
 		
 		//see if our state changed
-		if (previousState != currentState && !audioPicker.isPlayingVO)
+		if (previousState != currentState)
 		{
 
-			//This sends out an event that can let other scripts know that the emotional state
-			//has been changed
-			EmotionalStateChanged();
-
-			switch (currentState) {
-				case EmotionalState.attention:
-					audioPicker.PlayAttentionClips();
-					break;
-				case EmotionalState.stress:
-					audioPicker.PlayStressClips();
-					break;
-				case EmotionalState.relax:
-					audioPicker.PlayRelaxClips();
-					break;
-				case EmotionalState.meditation:
-					audioPicker.PlayMeditationClips();
-					break;
-				default:
-					break;
+			if (audioPicker.isPlayingVO) {
+				//delay state change while VO is playing
+				delayedChangeState = true;
 			}
+			
+			else {
+
+
+
+
+				//This sends out an event that can let other scripts know that the emotional state
+				//has been changed
+				EmotionalStateChanged();
+
+				switch (currentState) {
+					case EmotionalState.attention:
+						audioPicker.PlayAttentionClips();
+						break;
+					case EmotionalState.stress:
+						audioPicker.PlayStressClips();
+						break;
+					case EmotionalState.relax:
+						audioPicker.PlayRelaxClips();
+						break;
+					case EmotionalState.meditation:
+						audioPicker.PlayMeditationClips();
+						break;
+					default:
+						break;
+				}
+			}
+
 		} else {
 			// check to see if we've passed the time limit, then repeat the audio clips
-
+			//also if we have a delayed state change to process, do that now
+			if (delayedChangeState) {
+				EmotionalStateChanged();
+				RepeatAudioClips();
+				delayedChangeState = false;
+			}
+			
 			sameStateTimer += Time.deltaTime;
 			if (sameStateTimer >= sameStateRepeatTime && !audioPicker.isPlayingVO)
 			{
@@ -173,7 +193,9 @@ public class ReceiveEmotiv : MonoBehaviour {
 	}
 
 	public void RepeatAudioClips() {
-
+		
+		
+		
 		audioPicker.ResetPlayedList();
 
 		switch (currentState) {

@@ -37,7 +37,7 @@ public class InputVal : MonoBehaviour
     void Update() {
 
         imageValue = MathUtil.Remap(inputBCIValue, minBCIValue, maxBCIValue, 0f, 100f);
-        dialoguepicker.inputValue = imageValue;
+        //dialoguepicker.inputValue = imageValue;
 
         //There's an issue here with the counter - we can go up but we can't go back down
         //part of the problem is the way that we're dealing with these two variables, the bsiValue and

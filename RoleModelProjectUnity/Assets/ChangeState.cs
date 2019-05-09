@@ -126,17 +126,25 @@ public class ChangeState : MonoBehaviour
     }
 
     public void CheckStateChange() {
+        
+        Debug.Log("Received state change: " + myState.ToString());
+        
         //only occures when state is changed
         if (myState == receiveEmotivScript.currentState ) {
+            
+            Debug.Log("Activating: " + gameObject.name);
             StartCoroutine(FadeSpriteIn());
+            
         } else if (rend.color.a > 0) {
+            
             //we need to fade out the current sprite
             StartCoroutine(FadeSpriteOut());
+            
         }
     }
 
     IEnumerator FadeSpriteIn() {
-        Color startColor = new Color (1f, 1f, 1f, 0f);
+        Color startColor = rend.color;
 
         Color endColor = new Color (1f, 1f, 1f, 1f);
 
@@ -151,7 +159,7 @@ public class ChangeState : MonoBehaviour
     }
 
     IEnumerator FadeSpriteOut() {
-        Color startColor = new Color (1f, 1f, 1f, 1f);
+        Color startColor = rend.color;
 
         Color endColor = new Color (1f, 1f, 1f, 0f);
 

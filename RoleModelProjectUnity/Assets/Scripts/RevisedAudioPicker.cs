@@ -23,6 +23,9 @@ public class RevisedAudioPicker : MonoBehaviour
     public float timeBetweenVOClips = 2f;
 
     public AudioClip musicClip;
+    //assign a separate music source in the inspector
+    public AudioSource musicSource;
+    public float musicLowVolume, musicHighVolume;
 
     //if the player is in the same state for a long time, 
 
@@ -37,8 +40,9 @@ public class RevisedAudioPicker : MonoBehaviour
         
         
         //start with music clip playing
-        _audioSource.clip = musicClip;
-        _audioSource.Play();
+        musicSource.clip = musicClip;
+        musicSource.volume = musicHighVolume;
+        musicSource.Play();
 
     }
 
@@ -98,6 +102,8 @@ public class RevisedAudioPicker : MonoBehaviour
         //if the user's emotional state changes in the middle
         isPlayingVO = true;
 
+        StartCoroutine(FadeOutMusic(3f, musicLowVolume));
+
         //go through every item in the playlist
         for (int i = 0; i < playlist.Count; i++)
         {
@@ -110,10 +116,42 @@ public class RevisedAudioPicker : MonoBehaviour
         }
 
         //switch to music at the end
-        _audioSource.clip = musicClip;
-        _audioSource.Play();
+        StartCoroutine(FadeInMusic(3f, musicHighVolume));
 
         isPlayingVO = false;
     }
+
+    IEnumerator FadeInMusic(float timeToFade, float destinationVolume) {
+        float startVolume = musicSource.volume;
+        float totalTime = 0f;
+
+
+        while (totalTime < 1.0f) {
+            musicSource.volume = Mathf.Lerp(startVolume, destinationVolume, totalTime);
+            totalTime += Time.deltaTime/timeToFade;
+            yield return null;
+        }
+        
+
+    }
+    
+    IEnumerator FadeOutMusic(float timeToFade, float destinationVolume) {
+        
+        Debug.Log("Fading Out Music");
+        
+        float startVolume = musicSource.volume;
+        float totalTime = 0f;
+
+
+        while (totalTime < 1.0f) {
+            musicSource.volume = Mathf.Lerp(startVolume, destinationVolume, totalTime);
+            totalTime += Time.deltaTime/timeToFade;
+            yield return null;
+        }
+        
+
+    }
+
+
 
 }
