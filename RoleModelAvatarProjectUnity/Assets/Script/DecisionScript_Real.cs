@@ -7,13 +7,17 @@ public class DecisionScript_Real : MonoBehaviour
 
 
 {
-    public Button button1, button2, continuebut;
+    public Button button1, button2, continuebut, contbut;
 
     public GameObject continuebox;
     public GameObject button_1;
     public GameObject button_2;
     public GameObject score;
     public GameObject dialougebox;
+    public GameObject contbutton;
+
+    public GameObject[] MaleAnimations;
+    public GameObject[] FemaleAnimations;
 
     public Animator anim;
 
@@ -30,7 +34,13 @@ public class DecisionScript_Real : MonoBehaviour
     public string[] buttons2;
     public string[] animate;
 
+    string Male;
+    string Female;
+
     public GameObject[] background;
+
+    public AudioClip[] sounds;
+    public AudioSource audioS;
     //public string[] backanim;
 
     int button1counter = 0;
@@ -39,6 +49,7 @@ public class DecisionScript_Real : MonoBehaviour
     int butindex1 = 0;
     int butindex2 = 0;
     int diaindex = 0;
+    int sound = 0;
 
     int off = 1;
     int on = 0;
@@ -51,11 +62,20 @@ public class DecisionScript_Real : MonoBehaviour
         button2.onClick.AddListener(Button2);
         //Add continue button function
         continuebut.onClick.AddListener(NextScene);
+        contbut.onClick.AddListener(Continuebut);
 
         dialougetext.text = scenedialouge[0];
         continuebox.SetActive(false);
+        contbutton.SetActive(false);
         score.SetActive(false);
+        button_1.SetActive(false);
+        button_2.SetActive(false);
         background[0].SetActive(true);
+        audioS = GetComponent<AudioSource>();
+        audioS.clip = sounds[0];
+        StartCoroutine(Waitforaudio());
+        
+
 
 
     }
@@ -64,43 +84,45 @@ public class DecisionScript_Real : MonoBehaviour
     void Update()
     {
 
-        int i;
-        for (i = 0; i > dialouge.Length; i++)
-        {
-            //Debug.Log("Dialouge " + i);
-        }
-        int i2;
-        for (i2 = 0; i2 > dialouge2.Length; i2++)
-        {
-            //Debug.Log("Dialouge " + i);
-        }
-        int t;
-        for (t = 0; t > scenedialouge.Length; t++)
-        {
-            //Debug.Log("SceneDialouge " + t);
-        }
-        int b;
-        for (b = 0; b > buttons1.Length; b++)
-        {
-            //Debug.Log("Buttons " + b);
-        }
-        int b2;
-        for (b2 = 0; b2 > buttons2.Length; b2++)
-        {
-            //Debug.Log("Buttons " + b);
-        }
-        int a;
-        for (a = 0; a > animate.Length; a++)
-        {
 
-        }
-        //Changes dialouge text based on the scene dialouge array
+
+        Male = PlayerPrefs.GetString("Player Gender", "Male");
+        Female = PlayerPrefs.GetString("Player Gender", "Female");
+
         button1text.text = buttons1[butindex1];
         button2text.text = buttons2[butindex2];
 
 
 
+        if(audioS.clip == sounds[0])
+        {
+            FemaleAnimations[0].SetActive(true);
+        }
+        else
+        {
+            FemaleAnimations[0].SetActive(false);
+        }
+        if (audioS.clip == sounds[1])
+        {
+            MaleAnimations[0].SetActive(true);
+            StartCoroutine(Waitforanim());
+        }
+        else
+        {
+            MaleAnimations[0].SetActive(false);
+        }
+        if(audioS.clip == sounds[2])
+        {
+            MaleAnimations[2].SetActive(true);
+        }
+        if(audioS.clip == sounds[3])
+        {
+            FemaleAnimations[1].SetActive(true);
+        }
 
+
+
+        //Changes dialouge text based on the scene dialouge array
         if (index == scenedialouge.Length)
         {
             button_1.SetActive(false);
@@ -115,16 +137,57 @@ public class DecisionScript_Real : MonoBehaviour
             scoretext.text = "Your score was Male = " + but1 + "%" + " Female = " + but2 + "%";
         }
 
-
-
-        //if(background[2])
-        //{
-        //    background[1].SetActive(false);
-        //}
-
+        if(contbutton.activeInHierarchy)
+        {
+            audioS.Stop();
+        }
 
 
 
+    }
+    //Plays audio and waits for it to finish
+    public IEnumerator Waitforaudio()
+    {
+        //Playes audio till the end
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        audioS.clip = sounds[1];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        contbutton.SetActive(true);
+
+        //do something
+
+
+    }
+    public IEnumerator Waitforaudio2()
+    {
+        audioS.clip = sounds[2];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        audioS.clip = sounds[3];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        contbutton.SetActive(true);
+    }
+    public IEnumerator Waitforaudio3()
+    {
+        audioS.clip = sounds[4];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        audioS.clip = sounds[5];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+        contbutton.SetActive(true);
+    }
+    public IEnumerator Waitforanim()
+    {
+        //Start second animation if needed
+        yield return new WaitForSeconds(4);
+        MaleAnimations[1].SetActive(true);
+        yield return new WaitForSeconds(4);
+        MaleAnimations[1].SetActive(false);
+        //contbutton.SetActive(true);
     }
 
     void Button1()
@@ -137,10 +200,15 @@ public class DecisionScript_Real : MonoBehaviour
             continuebox.SetActive(true);
             button_1.SetActive(false);
             button_2.SetActive(false);
-          //  anim.SetBool(animate[0], true);
+
         }
 
         button1counter++;
+
+        //if (Female == PlayerPrefs.GetString("Player Gender", "Female"))
+        //{
+        //    FemaleAnimations[0].SetActive(true);
+        //}
 
 
 
@@ -155,11 +223,15 @@ public class DecisionScript_Real : MonoBehaviour
             continuebox.SetActive(true);
             button_2.SetActive(false);
             button_1.SetActive(false);
-           // anim.SetBool(animate[0], true);
+
 
         }
        
         button2counter++;
+        //if (Male == PlayerPrefs.GetString("Player Gender", "Male"))
+        //{
+        //    MaleAnimations[0].SetActive(true);
+        //}
 
 
     }
@@ -178,13 +250,29 @@ public class DecisionScript_Real : MonoBehaviour
         Debug.Log("Continue = " + index);
 
         continuebox.SetActive(false);
-        button_1.SetActive(true);
-        button_2.SetActive(true);
+        button_1.SetActive(false);
+        button_2.SetActive(false);
+        dialougebox.SetActive(false);
         background[on].SetActive(true);
 
         background[off].SetActive(false);
+        if(audioS.clip == sounds[1])
+        {
+            StartCoroutine(Waitforaudio2());
+        }
+        if (audioS.clip == sounds[3])
+        {
+            StartCoroutine(Waitforaudio2());
+        }
 
-
+    }
+    void Continuebut()
+    {
+        sound++;
+        contbutton.SetActive(false);
+        button_1.SetActive(true);
+        button_2.SetActive(true);
+        dialougebox.SetActive(true);
 
     }
 }

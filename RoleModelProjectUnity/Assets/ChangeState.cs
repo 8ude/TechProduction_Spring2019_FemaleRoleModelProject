@@ -24,35 +24,47 @@ public class ChangeState : MonoBehaviour
 
     public float currAlpha = 0;
 
+    public ReceiveEmotiv.EmotionalState myState;
+
+    public ReceiveEmotiv receiveEmotivScript;
     
     //trying an alternate way of implementing the fading scripts
     public float bciFadeInStart, bciFadeInEnd, bciFadeOutStart, bciFadeOutEnd;
     public float inputBCIValue;
 
 
+    void OnEnable() 
+    {
+        receiveEmotivScript.OnChangeState += CheckStateChange;
+    }
+
+    void OnDisable()
+    {
+        receiveEmotivScript.OnChangeState -= CheckStateChange;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        baseScale = transform.localScale;
-        transform.localScale = baseScale * startSize;
-        currScale = startSize;
-        targetScale = baseScale * startSize;
+        //baseScale = transform.localScale;
+        //transform.localScale = baseScale * startSize;
+        //currScale = startSize;
+        //targetScale = baseScale * startSize;
 
 
         //rend.color = new Color(1f, 1f, 1f, inputval.bsiValue);
 
     }
-
+//
     // Update is called once per frame
     void Update() {
 
-        inputBCIValue = inputval.imageValue;
+        //inputBCIValue = inputval.imageValue;
         
-        BSIChangeOpacity();
+        //BSIChangeOpacity();
         
         
-        transform.localScale = Vector3.MoveTowards(transform.localScale, 
-            targetScale, speed * Time.deltaTime);
+       // transform.localScale = Vector3.MoveTowards(transform.localScale, 
+           // targetScale, speed * Time.deltaTime);
 
         //rend.color = new Color(1f, 1f, 1f, inputval.bsiValue);
         
@@ -107,10 +119,50 @@ public class ChangeState : MonoBehaviour
         }
         else {
             
-            rend.color = new Color(1f, 1f, 1f, 0f);
+            rend.color = new Color(1f, 1f,1f, 0f);
             
         }
        
+    }
+
+    public void CheckStateChange() {
+        //only occures when state is changed
+        if (myState == receiveEmotivScript.currentState ) {
+            StartCoroutine(FadeSpriteIn());
+        } else if (rend.color.a > 0) {
+            //we need to fade out the current sprite
+            StartCoroutine(FadeSpriteOut());
+        }
+    }
+
+    IEnumerator FadeSpriteIn() {
+        Color startColor = new Color (1f, 1f, 1f, 0f);
+
+        Color endColor = new Color (1f, 1f, 1f, 1f);
+
+        float timer = 0f;
+
+        while (timer < 1f) {
+            rend.color = Color.Lerp(startColor, endColor, timer);
+            timer += (Time.deltaTime / 2f);
+            yield return null;
+        }
+        
+    }
+
+    IEnumerator FadeSpriteOut() {
+        Color startColor = new Color (1f, 1f, 1f, 1f);
+
+        Color endColor = new Color (1f, 1f, 1f, 0f);
+
+        float timer = 0f;
+
+        while (timer < 1f) {
+            rend.color = Color.Lerp(startColor, endColor, timer);
+            timer += (Time.deltaTime / 2f);
+            yield return null;
+        }
+        
     }
  
 
