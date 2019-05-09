@@ -6,25 +6,28 @@ public class ReceiveEmotiv : MonoBehaviour {
 
 	//Currently this script is configured to
 	public OSC osc;
-
-	public InputVal inputVal;
+	
+	//No longer needed
+	
+	//public InputVal inputVal;
 
 	//we need to find a good range of values to work with
 	//in the final version, the manufacturers will help us with
 	//our data stream
 	public float minimumBetaValue = 0f;
 	public float maximumBetaValue = 500f;
+	
 
 	//these are public just so that we can see them, but should not be set in the inspector
 	[SerializeField] float attentionVal = 0f, stressVal = 0f, relaxVal = 0f, meditationVal = 0f;
 
-	//the dummy slider is for testing when we don't have the brainbit connected
-	[Range(0f,100f)]public float dummySlider;
-	public bool useDummySlider;
+	//debug mode is for testing when we don't have the brainbit connected
+	public bool debugMode;
 
 	public enum EmotionalState {attention = 0, stress = 1, relax = 2, meditation = 3, neutralState = 4, numEntries}
 
 	public EmotionalState currentState;
+	private EmotionalState previousState;
 
 	public float[] stateValues;
 
@@ -41,9 +44,7 @@ public class ReceiveEmotiv : MonoBehaviour {
 	void Start () {
 
 		//osc addresses:
-		//currently there are 4 locations (T3, T4, 01, 02),
-		//each with /alpha, /beta, /gamma, and /theta frequencies
-		//this demo scene maps 3 of the beta values to color, and the 4th to a scale value
+		
 		osc.SetAddressHandler("/Attention", AttentionToStoredFloat);
 		osc.SetAddressHandler("/Stress", StressToStoredFloat);
 		osc.SetAddressHandler("/Relax", RelaxToStoredFloat);
@@ -52,12 +53,14 @@ public class ReceiveEmotiv : MonoBehaviour {
 		stateValues = new float[(int)EmotionalState.numEntries];
 
 		currentState = (EmotionalState)4;
+		previousState = (EmotionalState)4;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (useDummySlider) {
-			inputVal.inputBCIValue = dummySlider;
+		if (debugMode) {
+			//inputVal.inputBCIValue = dummySlider;
+			UpdateEmotionalState();
 		}
 		else {
 			UpdateEmotionalState();
@@ -106,22 +109,27 @@ public class ReceiveEmotiv : MonoBehaviour {
 	}
 
 	public void UpdateEmotionalState() {
-		stateValues[(int)EmotionalState.attention] = attentionVal;
-		stateValues[(int)EmotionalState.stress] = stressVal;
-		stateValues[(int)EmotionalState.relax] = relaxVal;
-		stateValues[(int)EmotionalState.meditation] = meditationVal;
-		stateValues[(int)EmotionalState.neutralState] = 0f;
+
+		//if the brainbit is connected, find the dominant value
+		if (!debugMode) {
 
 
-		EmotionalState previousState = currentState;
 
-		for (int i = 0; i < (int)EmotionalState.numEntries; i++) {
-			if (stateValues[i] > stateValues[(int)currentState])
-			{
-				currentState = (EmotionalState)i;
+			stateValues[(int) EmotionalState.attention] = attentionVal;
+			stateValues[(int) EmotionalState.stress] = stressVal;
+			stateValues[(int) EmotionalState.relax] = relaxVal;
+			stateValues[(int) EmotionalState.meditation] = meditationVal;
+			stateValues[(int) EmotionalState.neutralState] = 0f;
+			
+			
+			for (int i = 0; i < (int) EmotionalState.numEntries; i++) {
+				if (stateValues[i] > stateValues[(int) currentState]) {
+					currentState = (EmotionalState) i;
+				}
 			}
 		}
-
+		
+		//see if our state changed
 		if (previousState != currentState && !audioPicker.isPlayingVO)
 		{
 
@@ -154,6 +162,9 @@ public class ReceiveEmotiv : MonoBehaviour {
 				RepeatAudioClips();
 			}
 		}
+		
+		//set previous state to current state
+		previousState = currentState;
 
 	}
 

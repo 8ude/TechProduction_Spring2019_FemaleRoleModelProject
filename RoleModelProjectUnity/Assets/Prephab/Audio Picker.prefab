@@ -221,16 +221,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bf1bb8d3aef754c9011b2b6b677f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meditationClips: []
-  relaxClips: []
+  meditationClips:
+  - clipToPlay: {fileID: 8300000, guid: bc68e0390d88c4f01b4487e6693561d2, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: b8322ebf153ea4c148677e8fcb2f6b66, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 161bf2910ea5c448b929d48950a7fa73, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 6e49a6b1ef2924c40a6a37bb35116c36, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: b24595522fcc54be5afb6de088da9f09, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: f2ac38d5904fe4e72a8e966ac8cf156a, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: b5f85c9da17914d6c92089da47a7b177, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: bdbc7087fda3d4695bfd4b7316edc0db, type: 3}
+    hasPlayed: 0
+  relaxClips:
+  - clipToPlay: {fileID: 8300000, guid: 60d5436c63cd043e29e622b1f05b10da, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 425a5b7ae5fe84f08b3f92ee4f05ab48, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: ea3a07069adaa40b2aa3399caa236332, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: ce9a7c9d188f146e0a96a865c43709d9, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 9e1fe4ef4145f4d2898691bf24b94c13, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 4feb81f0100c8401a84a8bef3d1f76ec, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 7f0cc19d7a9ba430a95a88afc0fafa20, type: 3}
+    hasPlayed: 0
   stressClips:
-  - clipToPlay: {fileID: 8300000, guid: edde050cbe9a31948bb62b82f3f6b382, type: 3}
+  - clipToPlay: {fileID: 8300000, guid: eea0796b51e8941d2a53470f66926dfb, type: 3}
     hasPlayed: 0
-  - clipToPlay: {fileID: 8300000, guid: 83da2f30d9691f54590b3b9b1dc19fb8, type: 3}
+  - clipToPlay: {fileID: 8300000, guid: 69d2276b92de246d8a8a094ef9435c2b, type: 3}
     hasPlayed: 0
-  - clipToPlay: {fileID: 8300000, guid: 0a249493ca9fae6478edf609da8a0c2e, type: 3}
+  - clipToPlay: {fileID: 8300000, guid: 6e301bab6f9bd4ed6b0db4c73f5b1b88, type: 3}
     hasPlayed: 0
-  - clipToPlay: {fileID: 8300000, guid: 409c4dfacb75a3546bc9347dfbfaa38a, type: 3}
+  - clipToPlay: {fileID: 8300000, guid: 4d53131fa995f48fe81015740ac40c93, type: 3}
     hasPlayed: 0
-  attentionClips: []
+  - clipToPlay: {fileID: 8300000, guid: d5fbf087f34d846dfab05bc2f4d8f1c4, type: 3}
+    hasPlayed: 0
+  attentionClips:
+  - clipToPlay: {fileID: 8300000, guid: 2543f0812e60444b4a3db81ace82136b, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 09e6adbd07d9942b69896ab2b6c48e1f, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: 874fe2eac8a9d456090a292fa2784e81, type: 3}
+    hasPlayed: 0
+  - clipToPlay: {fileID: 8300000, guid: c7b44ced4b0e7426eb4b16cee632abb1, type: 3}
+    hasPlayed: 0
   isPlayingVO: 0
+  timeBetweenVOClips: 2
+  musicClip: {fileID: 8300000, guid: 72fb4ed80e0f5436da2cd370dd206c28, type: 3}

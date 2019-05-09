@@ -33,8 +33,12 @@ public class RevisedAudioPicker : MonoBehaviour
     {
         isPlayingVO = false;
         _audioSource = GetComponent<AudioSource>();
-        _audioSource.playOnAwake = false;
         ResetPlayedList();
+        
+        
+        //start with music clip playing
+        _audioSource.clip = musicClip;
+        _audioSource.Play();
 
     }
 
