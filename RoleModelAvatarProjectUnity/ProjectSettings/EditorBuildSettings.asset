@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterCreationScene.unity
     guid: e7eec7e8bd299a14c9601791478c2e77
   - enabled: 1
-    path: Assets/Scenes/DecisionScene.unity
-    guid: eed5ecb4e2c9a6c4a82140f6288aa0d4
+    path: Assets/Scenes/OfficeScene.unity
+    guid: a8dc9b1df23b8c24b8669fdf3259246f
+  - enabled: 1
+    path: Assets/Scenes/playground scene.unity
+    guid: 597745033d1a24c6595ea7b50b183b8c
   m_configObjects: {}
