@@ -131,7 +131,9 @@ public class RevisedAudioPicker : MonoBehaviour
             totalTime += Time.deltaTime/timeToFade;
             yield return null;
         }
-        
+
+        musicSource.volume = destinationVolume;
+
 
     }
     
@@ -148,7 +150,9 @@ public class RevisedAudioPicker : MonoBehaviour
             totalTime += Time.deltaTime/timeToFade;
             yield return null;
         }
-        
+
+        musicSource.volume = destinationVolume;
+
 
     }
 
