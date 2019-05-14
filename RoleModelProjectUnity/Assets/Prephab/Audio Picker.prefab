@@ -188,10 +188,10 @@ MonoBehaviour:
   - clipToPlay: {fileID: 8300000, guid: c7b44ced4b0e7426eb4b16cee632abb1, type: 3}
     hasPlayed: 0
   isPlayingVO: 0
-  timeBetweenVOClips: 2
+  timeBetweenVOClips: 5
   musicClip: {fileID: 8300000, guid: 72fb4ed80e0f5436da2cd370dd206c28, type: 3}
   musicSource: {fileID: 2691975022639372965}
-  musicLowVolume: 0.1
+  musicLowVolume: 0.05
   musicHighVolume: 1
 --- !u!1 &7364309583920840086
 GameObject:

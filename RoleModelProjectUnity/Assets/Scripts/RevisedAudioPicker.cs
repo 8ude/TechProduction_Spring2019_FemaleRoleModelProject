@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
+
 [RequireComponent(typeof(AudioSource))]
 public class RevisedAudioPicker : MonoBehaviour
 {
@@ -30,6 +32,7 @@ public class RevisedAudioPicker : MonoBehaviour
     //if the player is in the same state for a long time, 
 
     private AudioSource _audioSource;
+    private bool _guruSegmentPlaying;
 
     // Use this for initialization
     void Start()
@@ -43,6 +46,8 @@ public class RevisedAudioPicker : MonoBehaviour
         musicSource.clip = musicClip;
         musicSource.volume = musicHighVolume;
         musicSource.Play();
+
+        _guruSegmentPlaying = false;
 
     }
 
@@ -92,6 +97,11 @@ public class RevisedAudioPicker : MonoBehaviour
         {
             vo.hasPlayed = false;
         }
+    }
+
+    public void PlayGuruSegment() {
+        if (_guruSegmentPlaying) return;
+        StartCoroutine(GuruSegment());
     }
 
     //this coroutine goes through whatever array of VO clips we give it, and plays
@@ -153,6 +163,18 @@ public class RevisedAudioPicker : MonoBehaviour
 
         musicSource.volume = destinationVolume;
 
+
+    }
+
+    IEnumerator GuruSegment() {
+        _guruSegmentPlaying = true;
+        StartCoroutine(FadeOutMusic(3f, musicLowVolume));
+        yield return new WaitForSeconds(3f);
+        _audioSource.clip = meditationClips[UnityEngine.Random.Range(0, meditationClips.Count)].clipToPlay;
+        _audioSource.Play();
+        yield return new WaitForSeconds(_audioSource.clip.length);
+        StartCoroutine(FadeInMusic(3f, musicHighVolume));
+        _guruSegmentPlaying = false;
 
     }
 

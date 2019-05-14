@@ -11,11 +11,25 @@ public class TextChanging : MonoBehaviour {
 
     public float timeToChangeText;
 
+    public bool useTextTimer;
+
+    public ReceiveEmotiv receiveEmotiv;
+    
     private int currentTextIndex;
     private float textTimer;
+
+    void OnEnable() {
+
+        receiveEmotiv.OnChangeState += ChangeText;
+
+    }
     
     // Start is called before the first frame update
     void Start() {
+        
+        //initialize the text with nothing
+        textBox.text = " ";
+        
         textTimer = 0f;
         currentTextIndex = 0;
     }
@@ -34,6 +48,12 @@ public class TextChanging : MonoBehaviour {
 
     public void ChangeText() {
 
+        StartCoroutine(ChangingText());
+    }
+
+    public IEnumerator ChangingText() {
+        textBox.color = new Color(1f, 1f, 1f, 0f);
+        
         int newIndex = Random.Range(0, textPrompts.Length);
 
         if (newIndex == currentTextIndex) {
@@ -42,6 +62,26 @@ public class TextChanging : MonoBehaviour {
         
         textBox.text = textPrompts[newIndex];
         currentTextIndex = newIndex;
+
+        yield return new WaitForSeconds(2f);
+
+        float timer = 0f;
+
+        while (timer < 1f) {
+            textBox.color = new Color(1f, 1f, 1f, timer);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        
+        yield return new WaitForSeconds(2f);
+        
+        while (timer > 0f) {
+            textBox.color = new Color(1f, 1f, 1f, timer);
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+
+
     }
     
 }

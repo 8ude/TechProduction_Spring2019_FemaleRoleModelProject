@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class ReceiveEmotiv : MonoBehaviour {
@@ -42,6 +43,10 @@ public class ReceiveEmotiv : MonoBehaviour {
 
 	private bool delayedChangeState = false;
 
+	private bool pauseScanning = false;
+	
+	
+
 	// Use this for initialization
 	void Start () {
 
@@ -58,16 +63,20 @@ public class ReceiveEmotiv : MonoBehaviour {
 		previousState = (EmotionalState)4;
 
 		delayedChangeState = false;
+
+		pauseScanning = false;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (debugMode) {
-			//inputVal.inputBCIValue = dummySlider;
-			UpdateEmotionalState();
-		}
-		else {
-			UpdateEmotionalState();
+		if (!pauseScanning) {
+			if (debugMode) {
+				//inputVal.inputBCIValue = dummySlider;
+				UpdateEmotionalState();
+			}
+			else {
+				UpdateEmotionalState();
+			}
 		}
 	}
 
@@ -216,6 +225,28 @@ public class ReceiveEmotiv : MonoBehaviour {
 		}
 
 		sameStateTimer = 0f;
+
+	}
+
+	public void VisitTheGuru() {
+		if (pauseScanning) return;
+		
+		audioPicker.PlayGuruSegment();
+		StartCoroutine(VisitGuru());
+	}
+
+	public IEnumerator VisitGuru() {
+		
+		pauseScanning = true;
+		currentState = EmotionalState.meditation;
+		//change the image
+		EmotionalStateChanged();
+		
+		yield return new WaitForSeconds(20f);
+
+		currentState = EmotionalState.neutralState;
+		EmotionalStateChanged();
+		pauseScanning = false;
 
 	}
 }
