@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7672833606568395989}
   - component: {fileID: 7672833606568395978}
   - component: {fileID: 7672833606568395976}
+  - component: {fileID: 7672833606568395979}
   m_Layer: 0
   m_Name: Pot Cook - F
   m_TagString: Untagged
@@ -90,7 +91,7 @@ Animator:
   m_GameObject: {fileID: 7672833606568395977}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 912cb594dfc18f2419da43220a621c05, type: 2}
+  m_Controller: {fileID: 9100000, guid: 53033d658c57a4d10a61ff78213f3a68, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -99,3 +100,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7672833606568395979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672833606568395977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b91fdd9ab33d43879632dc51aabeb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poofParticles: {fileID: 8082392927381322042, guid: 0ff51e97421a846848ad232f054ae507,
+    type: 3}

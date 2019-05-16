@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4312176058539407998}
   - component: {fileID: 4312176058539407997}
+  - component: {fileID: 4312176058539407996}
   - component: {fileID: 4312176058539407987}
   m_Layer: 0
   m_Name: 'thinking Rational - M '
@@ -80,6 +81,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4312176058539407996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4312176058539407986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b91fdd9ab33d43879632dc51aabeb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poofParticles: {fileID: 8082392927381322042, guid: 0ff51e97421a846848ad232f054ae507,
+    type: 3}
 --- !u!95 &4312176058539407987
 Animator:
   serializedVersion: 3
@@ -90,7 +105,7 @@ Animator:
   m_GameObject: {fileID: 4312176058539407986}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e50298ea6e7d724395f658ea32c458f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 752f12cf8dc764753b4e9657bc815541, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

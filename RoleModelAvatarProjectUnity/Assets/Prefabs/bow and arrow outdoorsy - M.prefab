@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8306160213989944674}
   - component: {fileID: 8306160213989944675}
+  - component: {fileID: 8306160213989944672}
   - component: {fileID: 8306160213989944673}
   m_Layer: 0
   m_Name: bow and arrow outdoorsy - M
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c2c2988563e06614aa1613546222ee8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46811055523b647efa5018b49b5997c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -80,6 +81,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8306160213989944672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8306160213989944686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b91fdd9ab33d43879632dc51aabeb0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poofParticles: {fileID: 8082392927381322042, guid: 0ff51e97421a846848ad232f054ae507,
+    type: 3}
 --- !u!95 &8306160213989944673
 Animator:
   serializedVersion: 3
@@ -90,7 +105,7 @@ Animator:
   m_GameObject: {fileID: 8306160213989944686}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e50298ea6e7d724395f658ea32c458f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 752f12cf8dc764753b4e9657bc815541, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
