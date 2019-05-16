@@ -98,7 +98,7 @@ public class CharacterCreation : MonoBehaviour
         R_but.SetActive(true);
         if (index == leftbutText.Length)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("OfficeScene");
             L_but.SetActive(false);
             R_but.SetActive(false);
             conBut.SetActive(false);
