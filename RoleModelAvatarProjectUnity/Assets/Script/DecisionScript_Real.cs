@@ -40,6 +40,8 @@ public class DecisionScript_Real : MonoBehaviour
     public GameObject[] background;
 
     public AudioClip[] sounds;
+    public AudioClip[] demon;
+    public AudioSource demonAud;
     public AudioSource audioS;
     //public string[] backanim;
 
@@ -54,6 +56,16 @@ public class DecisionScript_Real : MonoBehaviour
     int off = 1;
     int on = 0;
 
+    public bool isoffice;
+    public bool iscloseup;
+    public bool isplayground;
+
+    public AudioClip office;
+    public AudioClip closeup;
+    public AudioClip coffee;
+    public AudioClip mud;
+    public AudioClip tag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +77,7 @@ public class DecisionScript_Real : MonoBehaviour
         contbut.onClick.AddListener(Continuebut);
 
         dialougetext.text = scenedialouge[0];
+        dialougebox.SetActive(false);
         continuebox.SetActive(false);
         contbutton.SetActive(false);
         score.SetActive(false);
@@ -94,7 +107,49 @@ public class DecisionScript_Real : MonoBehaviour
 
 
 
-        if(audioS.clip == sounds[0])
+
+        if (audioS.clip == sounds[1])
+        {
+            if(isplayground == true)
+            {
+                FemaleAnimations[0].SetActive(true);
+            }
+            if(isoffice == true)
+            {
+                MaleAnimations[0].SetActive(true);
+
+            }
+
+        }
+        else
+        {
+            MaleAnimations[0].SetActive(false);
+            FemaleAnimations[0].SetActive(false);
+        }
+        if(audioS.clip == sounds[2])
+        {
+            if(isplayground == true)
+            {
+                MaleAnimations[0].SetActive(true);
+                StartCoroutine(Waitforanim());
+            }
+
+
+        }
+        if(audioS.clip == sounds[3])
+        {
+            MaleAnimations[1].SetActive(true);
+            if(isplayground == true)
+            {
+                FemaleAnimations[1].SetActive(true);
+            }
+        }
+        else
+        {
+            MaleAnimations[1].SetActive(false);
+            FemaleAnimations[1].SetActive(false);
+        }
+        if (audioS.clip == office)
         {
             FemaleAnimations[0].SetActive(true);
         }
@@ -102,22 +157,22 @@ public class DecisionScript_Real : MonoBehaviour
         {
             FemaleAnimations[0].SetActive(false);
         }
-        if (audioS.clip == sounds[1])
+
+        if(audioS.clip == coffee)
         {
-            MaleAnimations[0].SetActive(true);
-            StartCoroutine(Waitforanim());
+            FemaleAnimations[1].SetActive(true);
         }
         else
         {
-            MaleAnimations[0].SetActive(false);
+            FemaleAnimations[1].SetActive(false);
         }
-        if(audioS.clip == sounds[2])
+        if(audioS.clip == sounds[4])
         {
             MaleAnimations[2].SetActive(true);
         }
-        if(audioS.clip == sounds[3])
+        else
         {
-            FemaleAnimations[1].SetActive(true);
+            MaleAnimations[2].SetActive(false);
         }
 
 
@@ -154,7 +209,32 @@ public class DecisionScript_Real : MonoBehaviour
         audioS.clip = sounds[1];
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
-        contbutton.SetActive(true);
+        if(background[0] && isoffice == true)
+        {
+            audioS.clip = office;
+            audioS.Play();
+            yield return new WaitWhile(() => audioS.isPlaying == true);
+            FemaleAnimations[0].SetActive(false);
+            contbutton.SetActive(true);
+
+        }
+        else
+        {
+            contbutton.SetActive(true);
+        }
+        if(background[0]&&isplayground == true)
+        {
+            audioS.clip = tag;
+            audioS.Play();
+            yield return new WaitWhile(() => audioS.isPlaying == true);
+            MaleAnimations[0].SetActive(true);
+            contbutton.SetActive(true);
+        }
+        else
+        {
+            contbutton.SetActive(true);
+        }
+
 
         //do something
 
@@ -168,7 +248,18 @@ public class DecisionScript_Real : MonoBehaviour
         audioS.clip = sounds[3];
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
-        contbutton.SetActive(true);
+        if(background[1]&&isoffice == true)
+        {
+            audioS.clip = coffee;
+            audioS.Play();
+            yield return new WaitWhile(() => audioS.isPlaying == true);
+            FemaleAnimations[1].SetActive(false);
+            contbutton.SetActive(true);
+        }
+        else
+        {
+            contbutton.SetActive(true);
+        }
     }
     public IEnumerator Waitforaudio3()
     {
@@ -178,7 +269,14 @@ public class DecisionScript_Real : MonoBehaviour
         audioS.clip = sounds[5];
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
-        contbutton.SetActive(true);
+        if (background[2]&&iscloseup == true)
+        {
+            audioS.clip = closeup;
+        }
+        else
+        {
+            contbutton.SetActive(true);
+        }
     }
     public IEnumerator Waitforanim()
     {
@@ -256,6 +354,10 @@ public class DecisionScript_Real : MonoBehaviour
         background[on].SetActive(true);
 
         background[off].SetActive(false);
+        if(audioS.clip == office)
+        {
+            StartCoroutine(Waitforaudio2());
+        }
         if(audioS.clip == sounds[1])
         {
             StartCoroutine(Waitforaudio2());
@@ -273,6 +375,18 @@ public class DecisionScript_Real : MonoBehaviour
         button_1.SetActive(true);
         button_2.SetActive(true);
         dialougebox.SetActive(true);
+
+        if(background[1])
+        {
+            MaleAnimations[1].SetActive(true);
+            FemaleAnimations[1].SetActive(true);
+        }
+        else
+        {
+            MaleAnimations[1].SetActive(false);
+            FemaleAnimations[1].SetActive(false);
+        }
+
 
     }
 }
