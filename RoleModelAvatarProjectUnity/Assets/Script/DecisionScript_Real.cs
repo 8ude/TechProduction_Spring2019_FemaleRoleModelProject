@@ -391,20 +391,24 @@ public class DecisionScript_Real : MonoBehaviour
         button_2.SetActive(true);
         dialougebox.SetActive(true);
 
-        if (dialougetext.text == dialouge[0])
+        if (dialougetext.text == scenedialouge[0])
         {
-            diaAudio.Play();
             diaAudio.clip = diaS[0];
-        }
-        if (dialougetext.text == dialouge[1])
-        {
             diaAudio.Play();
+            Debug.Log("Audio is Working");
+            
+        }
+        if (dialougetext.text == scenedialouge[1])
+        {
             diaAudio.clip = diaS[1];
-        }
-        if (dialougetext.text == dialouge[2])
-        {
             diaAudio.Play();
+
+        }
+        if (dialougetext.text == scenedialouge[2])
+        {
             diaAudio.clip = diaS[2];
+            diaAudio.Play();
+
         }
 
         //if(background[1]&&isoffice == true)
