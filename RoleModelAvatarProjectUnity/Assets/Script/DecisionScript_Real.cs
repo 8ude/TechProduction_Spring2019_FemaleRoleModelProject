@@ -385,6 +385,7 @@ public class DecisionScript_Real : MonoBehaviour
     }
     void Continuebut()
     {
+        Debug.Log("turrning on buttons");
         sound++;
         contbutton.SetActive(false);
         button_1.SetActive(true);
