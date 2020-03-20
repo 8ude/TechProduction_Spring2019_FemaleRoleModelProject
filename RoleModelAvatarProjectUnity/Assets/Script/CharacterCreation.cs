@@ -70,6 +70,7 @@ public class CharacterCreation : MonoBehaviour
             Debug.Log("User Chose Male");
             PlayerPrefs.SetString("PlayerGender", "Male");
         }
+        ScoringScript.Instance.AddToMaleScore();
         leftbutObjects[index].SetActive(true);
         L_but.SetActive(false);
         R_but.SetActive(false);
@@ -83,6 +84,8 @@ public class CharacterCreation : MonoBehaviour
             Debug.Log("User Chbose Female");
             PlayerPrefs.SetString("PlayerGender", "Female");
         }
+
+        ScoringScript.Instance.AddToFemaleScore();
         rightbutObjects[index].SetActive(true);
         L_but.SetActive(false);
         R_but.SetActive(false);

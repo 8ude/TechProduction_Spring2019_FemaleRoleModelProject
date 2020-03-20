@@ -15,6 +15,7 @@ public class PressRToReset : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) {
+            ScoringScript.Instance.ResetScore();
             SceneManager.LoadScene(0);
         }
         

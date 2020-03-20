@@ -17,16 +17,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OfficeScene.unity
     guid: a8dc9b1df23b8c24b8669fdf3259246f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/playground scene.unity
     guid: 597745033d1a24c6595ea7b50b183b8c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndTrashScene.unity
     guid: 1c2e6b163f4d74b718f929ad00eef902
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndPartScene.unity
     guid: b19cf8c51390147afb1acf53c1dcd023
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/New End.unity
     guid: fefdd143239264572acbec14d4ef709c
+  - enabled: 1
+    path: Assets/Scenes/endingScene.unity
+    guid: 7d0d174cc2d1045c78f2a4eb333e3785
   m_configObjects: {}

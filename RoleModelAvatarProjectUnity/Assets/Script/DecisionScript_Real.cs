@@ -7,11 +7,11 @@ public class DecisionScript_Real : MonoBehaviour
 
 
 {
-    public Button button1, button2, continuebut, contbut;
+    public Button rightButton, leftButton, continuebut, contbut, creditsButton;
 
     public GameObject continuebox;
-    public GameObject button_1;
-    public GameObject button_2;
+    public GameObject RightButton;
+    public GameObject LeftButton;
     public GameObject score;
     public GameObject dialougebox;
     public GameObject contbutton;
@@ -46,6 +46,7 @@ public class DecisionScript_Real : MonoBehaviour
     public AudioSource diaAudio;
     //public string[] backanim;
     public AudioClip[] diaS;
+    public AudioClip ChoiceOneOptionsAudio;
 
     int button1counter = 0;
     int button2counter = 0;
@@ -72,19 +73,21 @@ public class DecisionScript_Real : MonoBehaviour
     void Start()
     {
         //Adds button functions
-        button1.onClick.AddListener(Button1);
-        button2.onClick.AddListener(Button2);
+        rightButton.onClick.AddListener(RightButtonClicked);
+        leftButton.onClick.AddListener(LeftButtonClicked);
         //Add continue button function
         continuebut.onClick.AddListener(NextScene);
         contbut.onClick.AddListener(Continuebut);
+
+        creditsButton.onClick.AddListener(OnCreditsButton);
 
         dialougetext.text = scenedialouge[0];
         dialougebox.SetActive(false);
         continuebox.SetActive(false);
         contbutton.SetActive(false);
         score.SetActive(false);
-        button_1.SetActive(false);
-        button_2.SetActive(false);
+        RightButton.SetActive(false);
+        LeftButton.SetActive(false);
         background[0].SetActive(true);
         audioS = GetComponent<AudioSource>();
         audioS.clip = sounds[0];
@@ -171,16 +174,16 @@ public class DecisionScript_Real : MonoBehaviour
         //Changes dialouge text based on the scene dialouge array
         if (index == scenedialouge.Length)
         {
-            button_1.SetActive(false);
-            button_2.SetActive(false);
+            RightButton.SetActive(false);
+            LeftButton.SetActive(false);
             continuebox.SetActive(false);
             dialougebox.SetActive(false);
             background[2].SetActive(false);
             score.SetActive(true);
-            float but1 =(button1counter / 3.0f) * 100;
-            float but2 =(button2counter / 3.0f) * 100;
+            float malePercent = (ScoringScript.Instance.MaleScore / ScoringScript.Instance.TotalScore)*100f;
+            float femalePercent = (ScoringScript.Instance.FemaleScore / ScoringScript.Instance.TotalScore)*100f;
 
-            scoretext.text = "Your score was Male = " + but1 + "%" + " Female = " + but2 + "%";
+            scoretext.text = "Your score was Male = " + malePercent + "%" + "\n" + " Female = " + femalePercent + "%";
         }
 
         if(contbutton.activeInHierarchy)
@@ -195,8 +198,17 @@ public class DecisionScript_Real : MonoBehaviour
     public IEnumerator Waitforaudio()
     {
         //Playes audio till the end
+        audioS.clip = diaS[0];
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
+        audioS.clip = sounds[0];
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+
+        audioS.clip = ChoiceOneOptionsAudio;
+        audioS.Play();
+        yield return new WaitWhile(() => audioS.isPlaying == true);
+
         audioS.clip = sounds[1];
         audioS.Play();
         yield return new WaitWhile(() => audioS.isPlaying == true);
@@ -298,7 +310,7 @@ public class DecisionScript_Real : MonoBehaviour
         //contbutton.SetActive(true);
     }
 
-    void Button1()
+    void RightButtonClicked()
     {
         //Debug.Log("button1 was clicked!" + button1counter);
         //On left button click
@@ -306,12 +318,15 @@ public class DecisionScript_Real : MonoBehaviour
         {
             dialougetext.text = dialouge[diaindex];
             continuebox.SetActive(true);
-            button_1.SetActive(false);
-            button_2.SetActive(false);
+            RightButton.SetActive(false);
+            LeftButton.SetActive(false);
 
         }
 
-        button1counter++;
+        //right Button corresponds to female score
+        ScoringScript.Instance.AddToFemaleScore();
+
+        //button1counter++;
 
         //if (Female == PlayerPrefs.GetString("Player Gender", "Female"))
         //{
@@ -321,21 +336,23 @@ public class DecisionScript_Real : MonoBehaviour
 
 
     }
-    void Button2()
+    void LeftButtonClicked()
     {
         //Debug.Log("button2 was clicked!" + button2counter);
-        //On right button click
+
         if (dialougetext.text == scenedialouge[index])
         {
             dialougetext.text = dialouge2[diaindex];
             continuebox.SetActive(true);
-            button_2.SetActive(false);
-            button_1.SetActive(false);
+            LeftButton.SetActive(false);
+            RightButton.SetActive(false);
 
 
         }
+
+        ScoringScript.Instance.AddToMaleScore();
        
-        button2counter++;
+        //button2counter++;
         //if (Male == PlayerPrefs.GetString("Player Gender", "Male"))
         //{
         //    MaleAnimations[0].SetActive(true);
@@ -358,8 +375,8 @@ public class DecisionScript_Real : MonoBehaviour
         Debug.Log("Continue = " + index);
 
         continuebox.SetActive(false);
-        button_1.SetActive(false);
-        button_2.SetActive(false);
+        RightButton.SetActive(false);
+        LeftButton.SetActive(false);
         dialougebox.SetActive(false);
         background[on].SetActive(true);
 
@@ -388,14 +405,14 @@ public class DecisionScript_Real : MonoBehaviour
         Debug.Log("turrning on buttons");
         sound++;
         contbutton.SetActive(false);
-        button_1.SetActive(true);
-        button_2.SetActive(true);
+        RightButton.SetActive(true);
+        LeftButton.SetActive(true);
         dialougebox.SetActive(true);
 
         if (dialougetext.text == scenedialouge[0])
         {
-            diaAudio.clip = diaS[0];
-            diaAudio.Play();
+            //diaAudio.clip = diaS[0];
+            //diaAudio.Play();
             Debug.Log("Audio is Working");
             
         }
@@ -424,5 +441,10 @@ public class DecisionScript_Real : MonoBehaviour
         //}
 
 
+    }
+
+    public void OnCreditsButton()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("endingScene");
     }
 }
